@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>FISHER</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+	<div class="main">	
+		<div class="start">
+			<input type="text" name="nickname" id="nickname" placeholder="Введите свое имя">
+			<button id="btn_next" class="button">NEXT</button>				
+		</div>
+		<div class="law">
+			<p align="center">Правила:</p>
+			<p>1. Успейте поймать рыб за 3 минут!</p>
+			<p>2. Каждая рыба находится в пределах досягаемости на 10 секунд!</p>
+			<p>3. Маленька рыба = 30 очков, средняя = 20 очков, большая = 10 очков</p>
+			<button id="btn_start" class="button">START</button>
+		</div>
+	</div>
+	<div class="gametime">
+		<div class="interface">
+			<button id="pause" class="ib"></button>
+			<button id="audio" class="ib"></button>			
+		</div>
+		<canvas id="canvas"></canvas>
+	</div>
+
+<script src="jquery.min.js"></script>
+<script src="js.js"></script>
+</body>
+</html>

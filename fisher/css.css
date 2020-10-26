@@ -1,0 +1,137 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Roboto;
+}
+
+@font-face {
+	src: url(fonts/Roboto-Regular.ttf);
+	font-family: Roboto;
+}
+.button {
+	border: 0;
+	margin: 20px;
+	padding: 4px;
+	background-color: rgba(255,255,0,1);
+	font-size: 25px;
+	border-radius: 10%;
+	-webkit-transition: all 0.3s linear;
+	-khtml-transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
+	-o-transition:all 0.3s linear;
+	cursor: pointer;
+	background-size: cover;
+}
+.button:hover {
+	border-radius: 15%;
+	background-color: rgba(255,255,0,0.5);
+	font-size: 30px;
+	font-weight: bold;
+}
+.ib {
+	cursor: pointer;
+	border:0;
+	padding: 1px;
+	position: relative;
+	width: 50px;
+	height: 50px;
+	-webkit-transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
+	background-color: transparent;
+}
+.ib:hover {
+	background-position: 0 -5px;
+}
+.main {
+	background-image: url(img/bg1.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+.start {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	height: 100vh;
+	font-family: Roboto;
+}
+.law {
+	display: none;
+	justify-content: center;
+	flex-direction: column;
+	width: 600px;
+	position: absolute;
+	left: 440px;
+	top: 250px;
+	background-color: rgba(255,255,255,0.5);
+	font-family: Roboto;
+	color: white;
+	text-shadow: 0px 0px 2px black;
+	font-size: 28px;
+	font-weight: bold;
+	-webkit-box-shadow:0px 0px 2px white;
+	-moz-box-shadow:0px 0px 2px white;
+}
+.interface {
+	display: none;
+	justify-content: left;
+}
+.gametime {
+	display: none;
+	height: 100vh;
+	background-image: url(img/bg.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+#canvas {
+	-webkit-box-shadow: 0px 2px 58px 0 white;
+	position: absolute;
+	top: 80px;
+	right: 100px;
+	width: 800px;
+	height: 500px;
+}
+#nickname {
+	width: 300px;
+	height: 50px;
+	padding: 4px;
+	font-size: 25px;
+	border-radius: 40%;
+	text-align: center;
+	-webkit-transition: all 0.3s linear;
+	-khtml-transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
+	-o-transition:all 0.3s linear;
+}
+
+#nickname:hover {
+	-webkit-box-shadow: 0 0 5px white;
+}
+
+#btn_next {
+	width: 300px;
+	height: 50px;
+}
+
+#btn_start {
+	position: relative;
+	left: 120px;
+	width: 300px;
+	height: 50px;
+}
+#pause {
+	left: 5px;
+	top: 50vh;
+	background-image: url(img/pause.png);
+}
+
+#audio {
+	left: 5px;
+	top: 60vh;
+	background-image: url(img/audio.png);
+
+}
+

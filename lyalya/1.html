@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>EVE</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="2.css">
+	<link rel="shortcut icon" type="image/png" href="img/icon.png">
+</head>
+<body>
+<div class="fon">
+	<div class="menu">
+			<p id="logotype">EVE</p>
+			<button id="button_start" class="buttons">START</button>
+	</div>
+	<div class="law">
+		<button id="audio_btn" class="buttons"><img src="img/audio.png"></button>
+			<div class="slide" id="slide1">
+				<p id="lawtext">1. Ловите космичекий мусор</p></br><img src="img/trash1.png" id="gameico"><img src="img/trash2.png" id="gameico">
+				<img src="img/trash3.png" id="gameico"></br>
+				<button id="ok1" class="buttons">OK</button>
+			</div>
+			<div class="slide" id="slide2">
+				<p id="lawtext">2. Пропускайте корабли</p></br><button id="ok2" class="buttons">OK</button>
+				<img src="img/spaceship2.png" id="gameico"><img src="img/spaceship3.png" id="gameico">
+				<img src="img/spaceship4.png" id="gameico"></br>		
+			</div>
+			<div class="slide" id="slide3">
+				<p id="lawtext">Двигайте мышью и продержитесь 3 минут</p>
+				<button class="buttons" id="letsgo">Let's Go !</button>
+			</div>			
+	</div>
+	<div class="gametime">
+		<div class="interface">
+			<button id="pause" class="buttons">PAUSE</button>
+			<button id="audio_btn" class="buttons"><img src="img/audio.png"></button>
+		</div>
+
+	<canvas id="canvas"></canvas>
+	</div>	
+</div>
+<script src="jquery.min.js"></script>
+<script src="3.js"></script>
+</body>
+</html>

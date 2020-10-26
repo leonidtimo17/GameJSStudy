@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+	 <title>QWERTY - GAME</title>
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet" href="mygamestyle.css">
+</head>
+
+
+<body style="opacity:0;transition:.5s;">
+<div class="fon">
+    	 <div class="setting">
+	       <button id="btn_pause"></button>
+	       <button id="sound"></button>
+	       <img src="img/timer.png" id="timerT">
+	       <input type="text" name="nickname" placeholder=inp_nickanme>
+         </div> 
+
+    <div class="game_stage">
+			  <div class="result_page">
+			     <div class="table_score">
+				     <p>Ваш результат: <span id="user_score">0</span> за <span id="user_time">0</span> секунд.</p>
+				     <div id="out_scores"></div>
+				<button id="restart">СЫГРАТЬ ЗАНОВО</button>
+			     </div>
+		      </div>
+	 </div>  
+</div>
+
+<script src="jquery.min.js"></script>
+<script src="mygame.js"></script>
+<script>
+  $(document).ready(function() {    
+    $("body").css("opacity", "1");
+  });
+</script>
+
+</body>
+</html>

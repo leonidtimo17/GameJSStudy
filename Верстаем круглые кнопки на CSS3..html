@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-20497344-2"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-20497344-2');
+	</script>
+
+	<title>Верстаем круглые кнопки на CSS3.</title>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<meta name="description" content="В этой статье мы научимся создавать круглые кнопки на css3." />
+			<meta name="keywords" content="css3, round buttons, круглые кнопки на css3, вёрстка круглых кнопок" />
+				<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+				<link type="text/css" rel="stylesheet" href="/styles/main.css" />
+			<link type="text/css" rel="stylesheet" href="/styles/prettify.css" />
+			<link type="text/css" rel="stylesheet" href="/styles/wbbtheme.css" />
+		<link rel="canonical" href="https://myrusakov.ru/css3-buttons.html" />
+	<script type="application/ld+json">
+	{
+	  "@context" : "http://schema.org",
+	  "@type" : "Organization",
+	  "name" : "MyRusakov.ru",
+	  "url" : "https://myrusakov.ru",
+	  "sameAs" : [
+		"https://vk.com/sitemyrusakov",
+		"https://www.facebook.com/myrusakov",
+		"https://twitter.com/myrusakov",
+		"https://plus.google.com/113718363302495120860"
+	  ]
+	}
+	</script>
+</head><body>
+		<div id="container">
+		<header>
+			<h2>&lt;MyRusakov.ru /&gt;</h2>
+			<nav>
+	<ul id="topmenu">
+					<li>
+				<a   href="/">Главная</a>
+			</li>
+					<li>
+				<a   href="/rusakov-mihail.html">Об авторе</a>
+			</li>
+					<li>
+				<a  rel="external" href="https://support.myrusakov.ru">Служба поддержки</a>
+			</li>
+					<li>
+				<a  rel="external" href="https://blog.myrusakov.ru">Мой Блог</a>
+			</li>
+					<li>
+				<a  rel="external" href="https://blog.myrusakov.ru/reviews.html">Видеоотзывы</a>
+			</li>
+					<li>
+				<a   href="/tests.html">Тесты</a>
+			</li>
+			</ul>
+</nav>		</header>
+		<div id="top">
+			<div class="clear"></div>
+			<div id="search">
+				<form name="search" action="/search.html" method="get">
+					<table>
+						<tr>
+							<td>
+								<input type="text" name="query" placeholder="Поиск" />
+							</td>
+							<td>
+								<input type="submit" value="" />
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<div id="auth">
+	
+	<table>
+		<tr>
+						<td>
+				<form name="auth" action="/css3-buttons.html" method="post">
+					<div>
+						<input type="text" name="login" placeholder="Логин" />
+						<input type="password" name="password" placeholder="Пароль" />
+						<input type="submit" name="auth" value="Войти" />
+					</div>
+				</form>
+			</td>
+			<td>
+				<img src="/images/bg_item_top.png" alt="" id="top_sep" />
+			</td>
+			<td>
+				<img src="/images/icon_register.png" alt="" id="icon_register" />
+			</td>
+			<td>
+				<a href="/register.html" id="link_register">Регистрация</a>
+			</td>
+			<td>
+				<img src="/images/bg_item_top.png" alt="" />
+			</td>
+			<td>
+				<div id="links_reset">
+					<a href="/reset.html">Забыли пароль?</a>
+					<a href="/remind.html">Забыли логин?</a>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>		</div>
+		<div id="slider">
+	<div id="course">
+		<img src="/images/im2-cover.png" alt="Создание Интернет-магазина на OpenCart 2.0" />
+		<h2>Создание Интернет-магазина на OpenCart 2.0</h2>
+		<div>
+			<p>Видеокурс <b>"Создание Интернет-магазина на OpenCart 2.0"</b> обучит Вас созданию любых Интернет-магазинов на OpenCart 2. В первом разделе курса разбираются абсолютно все возможности данного движка с примерами.</p>
+<p>Во втором разделе создаётся полноценный Интернет-магазин, где Вы уже всё увидите своими глазами.</p>
+<p>И, наконец, в третьем разделе курса созданный Интернет-магазин будет размещён в Интернете.</p>
+<p>К курсу так же идут бесплатные и очень ценные Бонусы сопоставимые с самим курсом: "Как сэкономить на Яндекс.Директ до 50%", "Дропшиппинг" и "Как раскрутить Интернет-магазин".</p>			<a class="more" href="http://srs.myrusakov.ru/im2?utm_source=MyRusakov.ru&amp;utm_campaign=im2">Подробнее</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>		<div id="content">
+			<div id="left"><div class="block">
+	<div class="header">Уроки и статьи</div>
+	<div class="content">
+		<nav>
+									<div id="item_1">
+		<a   href="/">Главная</a>
+			</div>
+									<div id="item_2">
+		<a   href="/html.html">HTML</a>
+						<div id="item_18">
+		<a   href="/html-osnovy.html">HTML Основы</a>
+			</div>
+						<div id="item_19">
+		<a   href="/html-5.html">HTML5</a>
+			</div>
+			</div>
+									<div id="item_3">
+		<a class="active"  href="/css.html">CSS</a>
+						<div id="item_20">
+		<a   href="/css-osnovy.html">CSS Основы</a>
+			</div>
+						<div id="item_21">
+		<a class="active"  href="/css3.html">CSS3</a>
+			</div>
+			</div>
+									<div id="item_4">
+		<a   href="/javascript.html">JavaScript</a>
+						<div id="item_22">
+		<a   href="/javascript-osnovy.html">JavaScript Основы</a>
+			</div>
+						<div id="item_23">
+		<a   href="/javascript-skripty.html">JavaScript Скрипты</a>
+			</div>
+						<div id="item_24">
+		<a   href="/jquery.html">jQuery</a>
+			</div>
+			</div>
+									<div id="item_5">
+		<a   href="/php.html">PHP</a>
+						<div id="item_25">
+		<a   href="/php-osnovy.html">PHP Основы</a>
+			</div>
+						<div id="item_26">
+		<a   href="/php-skripty.html">PHP Скрипты</a>
+			</div>
+			</div>
+									<div id="item_6">
+		<a   href="/mysql.html">MySQL</a>
+						<div id="item_27">
+		<a   href="/mysql-osnovy.html">MySQL Основы</a>
+			</div>
+						<div id="item_28">
+		<a   href="/sql-osnovy.html">SQL</a>
+			</div>
+			</div>
+									<div id="item_7">
+		<a   href="/xml.html">XML</a>
+						<div id="item_29">
+		<a   href="/xml-osnovy.html">XML Основы</a>
+			</div>
+			</div>
+									<div id="item_8">
+		<a   href="/joomla.html">Joomla</a>
+						<div id="item_30">
+		<a   href="/joomla-ustanovka.html">Joomla Установка</a>
+			</div>
+						<div id="item_31">
+		<a   href="/joomla-shablony.html">Joomla Шаблоны</a>
+			</div>
+						<div id="item_32">
+		<a   href="/joomla-moduli.html">Joomla Модули</a>
+			</div>
+						<div id="item_33">
+		<a   href="/joomla-plaginy.html">Joomla Плагины</a>
+			</div>
+						<div id="item_34">
+		<a   href="/joomla-komponenty.html">Joomla Компоненты</a>
+			</div>
+			</div>
+									<div id="item_9">
+		<a   href="/registraciya-sajta.html">Регистрация сайта</a>
+			</div>
+									<div id="item_10">
+		<a   href="/kak-raskrutit-sajt.html">Раскрутка сайта</a>
+						<div id="item_35">
+		<a   href="/vnutrennyaya-optimizaciya.html">Внутренняя оптимизация</a>
+			</div>
+						<div id="item_36">
+		<a   href="/vneshnyaya-optimizaciya.html">Внешняя оптимизация</a>
+			</div>
+			</div>
+									<div id="item_11">
+		<a   href="/skachat-uchebniki-sozdanie-raskrutka-sajta.html">Учебники</a>
+						<div id="item_37">
+		<a   href="/skachat-uchebniki-sozdanie-sajta.html">Учебники по созданию сайтов</a>
+			</div>
+						<div id="item_38">
+		<a   href="/skachat-uchebniki-raskrutka-sajta.html">Учебники по раскрутке сайтов</a>
+			</div>
+			</div>
+									<div id="item_12">
+		<a   href="/video.html">Видеоуроки</a>
+						<div id="item_39">
+		<a   href="/video-sozdanie-sajta.html">Видеоуроки по созданию сайтов</a>
+			</div>
+						<div id="item_40">
+		<a   href="/video-raskrutka-sajta.html">Видеоуроки по раскрутке сайтов</a>
+			</div>
+			</div>
+									<div id="item_13">
+		<a   href="/soft.html">Софт</a>
+						<div id="item_41">
+		<a   href="/soft-sozdanie-sajta.html">Софт для создания сайтов</a>
+			</div>
+						<div id="item_42">
+		<a   href="/soft-raskrutka-sajta.html">Софт для раскрутки сайтов</a>
+			</div>
+			</div>
+									<div id="item_14">
+		<a   href="/forum.html">Форум</a>
+			</div>
+									<div id="item_15">
+		<a   href="/map.html">Карта сайта</a>
+			</div>
+									<div id="item_16">
+		<a  rel="external" href="https://blog.myrusakov.ru/courses.html">Видеокурсы</a>
+			</div>
+									<div id="item_17">
+		<a  rel="external" href="https://srs.myrusakov.ru/lessons">Видеоуроки (VIP)</a>
+			</div>
+																																																																																																																																																																																																													</nav>
+	</div>
+</div><div class="block">
+	<div class="header">Подписка</div>
+	<div class="content">
+		<div id="subscribe_vk">
+			<div id="subscribe">
+				<p>Подписавшись по <b>E-mail</b>, Вы будете получать уведомления о новых статьях.</p>
+				<img src="/images/icon_rss.png" alt="Подписка" />
+				<a href="/subscribe.html" class="button">Подписаться</a>
+			</div>
+			<div class="clear"></div>
+			<img id="subscribe_vk_sep" src="/images/menu_sep.png" alt="" />
+			<div class="clear"></div>
+			<div id="vk">
+				<p>Добавляйтесь ко мне в друзья <b>ВКонтакте</b>! Отзывы о сайте и обо мне оставляйте в моей группе.</p>
+				<img src="/images/icon_vk.png" alt="Мой аккаунт" />
+				<a rel="external" href="http://vk.com/myrusakov" class="button">Мой аккаунт</a>
+				<a rel="external" href="http://vk.com/rusakovmy" class="button">Моя группа</a>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div><div class="block">
+	<div class="header">Опрос</div>
+	<div class="content">
+		<div id="poll">
+			<p>Каким движком Вы предпочитаете пользоваться?</p>
+			<form name="poll" action="/poll.html?id=10" method="post">
+									<div>
+						<input id="poll_data_34" type="radio" name="poll_data_id" value="34" />
+						<label for="poll_data_34">Сам создаю движок</label>
+					</div>
+									<div>
+						<input id="poll_data_35" type="radio" name="poll_data_id" value="35" />
+						<label for="poll_data_35">WordPress</label>
+					</div>
+									<div>
+						<input id="poll_data_36" type="radio" name="poll_data_id" value="36" />
+						<label for="poll_data_36">Joomla</label>
+					</div>
+									<div>
+						<input id="poll_data_37" type="radio" name="poll_data_id" value="37" />
+						<label for="poll_data_37">DLE</label>
+					</div>
+									<div>
+						<input id="poll_data_38" type="radio" name="poll_data_id" value="38" />
+						<label for="poll_data_38">Другой</label>
+					</div>
+								<div>
+					<input type="submit" name="poll" value="Голосовать" class="button" />
+				</div>
+			</form>
+		</div>
+	</div>
+</div></div>
+			<div id="right">	<div class="block">
+		<div class="header">Бесплатный курс</div>
+		<div class="content">
+			<div class="free">
+				<p class="title">HTML и CSS для начинающих</p>
+				<a rel="external" href="https://srs.myrusakov.ru/freemakeup2?utm_source=MyRusakov.ru&amp;utm_campaign=freemakeup2">
+					<img src="/images/freemakeup2-cover.png" alt="HTML и CSS для начинающих" />
+				</a>
+				<p><b>Пройдя курс, Вы узнаете:</b></p>
+<p>- Всё необходимое по HTML</p>
+<p>- Всё необходимое по CSS</p>
+<p>- Научитесь создавать Web-страницы</p>
+<p>Общая продолжительность курса 6 часов и 43 минуты, плюс упражнения!</p>									<p class="center"><b>Чтобы получить Видеокурс,<br />заполните форму</b></p>
+					<form name="free_course" action="https://srs.myrusakov.ru/subscribe?utm_source=MyRusakov.ru&utm_campaign=freemakeup2" method="post" onsubmit="return SR_submit(this)">
+						<table>
+							<tr>
+								<td>
+									<label for="field_email">E-mail:</label>
+								</td>
+								<td>
+									<input id="field_email" type="text" name="email" value="" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="field_name_first">Имя:</label>
+								</td>
+								<td>
+									<input id="field_name_first" type="text" name="name" value="" />
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" class="center">
+									<input type="hidden" value="36" name="delivery_id">
+									<input type="submit" name="free_course" value="Получить курс" class="button" />
+								</td>
+							</tr>
+						</table>
+					</form>
+								<div class="center">
+					<a rel="external" href="https://blog.myrusakov.ru/courses.html" class="button">Другие курсы</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="block">
+		<div class="header">Бесплатный онлайн-семинар</div>
+		<div class="content">
+			<div class="free">
+				<p class="title">Как создать профессиональный Интернет-магазин</p>
+				<a rel="external" href="http://srs.myrusakov.ru/createim?utm_source=MyRusakov.ru&amp;utm_campaign=createim">
+					<img src="/images/create-im.png" alt="Как создать профессиональный Интернет-магазин" />
+				</a>
+				<p><b>После семинара:</b></p><p>- Вы будете знать, как создать Интернет-магазин.</p><p>- Вы получите бесплатный подарок с подробным описанием каждого шага.</p><p>- Вы сможете уже приступить к созданию Интернет-магазина.</p>									<div class="center">
+						<a href="http://srs.myrusakov.ru/createim?utm_source=MyRusakov.ru&amp;utm_campaign=createim" class="button">Записаться</a>
+					</div>
+								<div class="center">
+					<a rel="external" href="https://blog.myrusakov.ru/courses.html" class="button">Другие курсы</a>
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="block">
+	<script src="//vk.com/js/api/openapi.js?121"></script>
+
+	<!-- VK Widget -->
+	<div id="vk_groups"></div>
+	<script>
+	VK.Widgets.Group("vk_groups", {mode: 0, width: "220", height: "400", color1: 'FFFFFF', color2: '346388', color3: '1374A2'}, 25691304);
+	</script>
+</div>
+<div class="block">
+	<div class="header">Умные цитаты</div>
+	<div class="content">
+		<div id="quote">
+			<p>Мы лишаемся досуга, чтобы иметь досуг, и войну ведем, чтобы жить в мире.</p>
+			<p class="right"><i>Аристотель</i></p>
+		</div>
+	</div>
+</div></div>
+			<div id="center"><div class="main">
+	<nav>
+	<p>Вы здесь:
+								<a href="/">Главная</a>					 - 			<a href="/css.html">CSS</a>					 - 			<a href="/css3.html">CSS3</a>					 - 			Верстаем круглые кнопки на CSS3.			</p>
+</nav>	<article>
+		<h1>Верстаем круглые кнопки на CSS3.</h1>
+					<div class="article_img">
+				<img src="/images/articles/css3-buttons.jpg" alt="Верстаем круглые кнопки на CSS3." />
+			</div>
+				<p>Здравствуйте, дорогие читатели. Мы уже изучили многие свойства, которые появились в <b>CSS3</b>, но просто их знать мало. Нужно обязательно практиковаться! И вот сегодня я покажу, <b>как создать круглые кнопки на CSS3</b>.</p>
+<p>Откроем файл <b>index.html</b> и создадим простенькую структуру</p>
+<code class="code">&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="ru"&gt;<br>
+&lt;head&gt;<br>
+&nbsp; &lt;meta charset="UTF-8"&gt;<br>
+&nbsp; &lt;title&gt;CSS3 Buttons&lt;/title&gt;<br>
+&nbsp; &lt;link rel="stylesheet" href="style.css"&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+&nbsp; &lt;div class="button"&gt;&lt;/div&gt;<br>
+&nbsp; &lt;div class="button"&gt;&lt;/div&gt;<br>
+&nbsp; &lt;div class="button"&gt;&lt;/div&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+</code>
+<p>Ничего особенного. Просто <b>3</b> блока с классом <b>.button</b> Перейдём теперь к стилям.</p>
+<code class="code">body {<br>
+&nbsp; background: url(http://subtlepatterns.com/patterns/extra_clean_paper.png);<br>
+}<br>
+<br>
+.button {<br>
+&nbsp; display: inline-block;<br>
+&nbsp; margin: 40px;<br>
+&nbsp; width: 100px;<br>
+&nbsp; height: 100px;<br>
+&nbsp; background: url(http://subtlepatterns.com/patterns/extra_clean_paper.png);<br>
+&nbsp; cursor: pointer;<br>
+&nbsp; border-radius: 50%;<br>
+<br>
+&nbsp; box-shadow: 0 3px 20px rgba(0,0,0,.25),<br>
+&nbsp; inset 0 2px 0 rgba(255,255,255,.6),<br>
+&nbsp; 0 2px 0 rgba(0,0,0,.1),<br>
+&nbsp; inset 0 0 20px rgba(0,0,0,.1);<br>
+}
+</code>
+<p>Фон для документа и наших кнопок я взял с сайта <i>subtlepatterns.com</i>.</p>
+<p>Мы делаем наши <b>div</b> строчно-блочными, чтобы они выстроились по горизонтали, задаём им высоту, ширину, отступ от краёв браузера, скругление <b>50%</b>, чтобы получить круг, и при наведении курсор делаем <b>pointer</b>. Здесь нет ничего сложного, но тень я не зря отделил в стилях, т.к. это именно та часть, которая может вызвать затруднения, хотя, там тоже всё просто, и это вы сейчас увидите.</p>
+<p>Задав первую тень, мы уже увидим контур нашего круга:</p>
+<code class="code">box-shadow: 0 3px 20px rgba(0,0,0,.25);
+</code>
+<p><img src="images/articles/css3-buttons-1.png" alt="Контур круга"></p>
+<p>Затем мы задаём <b>внутреннюю тень</b>, чтобы у нас сверху появилась такая оконтовочка, и кнопка стала более объёмной.</p>
+<code class="code">box-shadow: 0 3px 20px rgba(0,0,0,.25),<br>
+inset 0 2px 0 rgba(255,255,255,.6);
+</code>
+<p><img src="images/articles/css3-buttons-2.png" alt="Контур круга с оконтовочкой"></p>
+<p>Следующая внешняя тень нужна для того, чтобы немного затемнить место под кнопкой снизу, а следующая внутренняя затемняет пространство внутри кнопки для пущего эффекта)</p>
+<code class="code">box-shadow: 0 3px 20px rgba(0,0,0,.25),<br>
+inset 0 2px 0 rgba(255,255,255,.6),<br>
+0 2px 0 rgba(0,0,0,.1),<br>
+inset 0 0 20px rgba(0,0,0,.1);
+</code>
+<p>Как видите, по-началу кажется сложно, много свойств, но, если разобраться, то всё оказывается намного проще. Итак, вот наш конечный результат:</p>
+<p><img src="images/articles/css3-buttons-3.png" alt="Готовая кнопка"></p>
+<p>Теперь реализуем поведение <b>при наведении</b> на блок</p>
+<code class="code">.button:hover {<br>
+&nbsp; box-shadow: inset 0 0 20px rgba(0,0,0,.2),<br>
+&nbsp; 0 2px 0 rgba(255,255,255,.4),<br>
+&nbsp; inset 0 2px 0 rgba(0,0,0,.1);<br>
+}
+</code>
+<p>Мы уже разобрались с тенями в блоке, а теперь попробуйте разобраться сами с тем, что происходит при наведении. Точно так же оставьте только одну тень и посмотрите, что происходит, а затем добавьте вторую и посмотрите, что изменилось, и так далее.</p>
+<p><img src="images/articles/css3-buttons-4.png" alt="Кнопка при наведении"></p>
+<p>Наконец, давайте добавим иконки нашим кнопкам, чтобы было не очень скучно. Для этого изменим немного <b>html</b></p>
+<code class="code">&lt;div class="button btn-photo"&gt;&lt;/div&gt;<br>
+&lt;div class="button btn-settings"&gt;&lt;/div&gt;<br>
+&lt;div class="button btn-tag"&gt;&lt;/div&gt;
+</code>
+<p>Мы просто добавили дополнительный класс для каждой кнопки и теперь давайте зададим стили для них</p>
+<code class="code">.btn-photo {<br>
+&nbsp; background: url(http://defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/MD-camera-photo_0.png) center center no-repeat;<br>
+}<br>
+<br>
+.btn-settings {<br>
+&nbsp; background: url(http://defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/settings.png) center center no-repeat;<br>
+}<br>
+<br>
+.btn-tag {<br>
+&nbsp; background: url(http://defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/tag.png) center center no-repeat;<br>
+}
+</code>
+<p><img src="images/articles/css3-buttons-5.png" alt="Готовые кнопки"></p>
+<p>Здесь мы просто добавляем второй фон для каждой кнопки, взяв иконки с сайта <i>defaulticon.com</i>.</p>
+<p>Вот и всё. Сегодня мы рассмотрели, <b>как создать круглые кнопки на CSS3</b>.</p>		<div class="article_info">
+			<ul>
+				<li>
+					<div>
+						<img src="/images/date_article.png" alt="" />
+					</div>
+					Создано 05.05.2014 13:55:57				</li>
+				<li>
+					<img src="/images/icon_user.png" alt="" />
+					Михаил Русаков				</li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</article>
+	<div id="article_pn">
+		<a id="prev_article" href="/multi-column-css3.html">Предыдущая статья</a>		<a id="next_article" href="/shadows-examples.html">Следующая статья</a>		<div class="clear"></div>
+	</div>
+	<div id="article_copy">
+		<p class="center"><i>Копирование материалов разрешается только с указанием автора (Михаил Русаков) и индексируемой прямой ссылкой на сайт (<a href="http://myrusakov.ru">http://myrusakov.ru</a>)!</i></p>
+	</div>
+	<div id="article_vk">
+		<p>Добавляйтесь ко мне в друзья <b>ВКонтакте</b>: <a rel="external" href="http://vk.com/myrusakov">http://vk.com/myrusakov</a>.<br />Если Вы хотите дать оценку мне и моей работе, то напишите её в моей группе: <a rel="external" href="http://vk.com/rusakovmy">http://vk.com/rusakovmy</a>.</p>
+		<p>Если Вы не хотите пропустить новые материалы на сайте,<br />то Вы можете <b>подписаться на обновления</b>: <a href="/subscribe.html">Подписаться на обновления</a></p>
+	</div>
+	<p>Если у Вас остались какие-либо вопросы, либо у Вас есть желание высказаться по поводу этой статьи, то Вы можете оставить свой комментарий внизу страницы.</p>
+	<div id="share">
+		<p>Порекомендуйте эту статью друзьям:</p>
+		<script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+		<script src="//yastatic.net/share2/share.js"></script>
+		<div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,gplus" data-counter="" data-image="/images/articles/css3-buttons.jpg" data-description="В этой статье мы научимся создавать круглые кнопки на css3."></div>
+	</div>
+	<p>Если Вам понравился сайт, то разместите ссылку на него (у себя на сайте, на форуме, в контакте):</p>
+	<ol id="recom">
+		<li>
+			Кнопка:
+			<br /><textarea cols="50" rows="5">&lt;a href="https://myrusakov.ru" target="_blank"&gt;&lt;img src="https://myrusakov.ru/images/button.gif" style="border: 0; height: 31px; width: 88px;" alt="Как создать свой сайт" /&gt;&lt;/a&gt;</textarea>
+			<p>Она выглядит вот так: <a href="https://myrusakov.ru" rel="external"><img src="https://myrusakov.ru/images/button.gif" style="border: 0; height: 31px; width: 88px;" alt="Как создать свой сайт" /></a></p>
+		</li>
+		<li>
+			Текстовая ссылка:<br /><textarea cols="50" rows="5">&lt;a href="https://myrusakov.ru" target="_blank"&gt;Как создать свой сайт&lt;/a&gt;</textarea>
+			<p>Она выглядит вот так: <a href="https://myrusakov.ru" rel="external">Как создать свой сайт</a></p>
+		</li>
+		<li>BB-код ссылки для форумов (например, можете поставить её в подписи):
+			<br /><textarea cols="50" rows="5">[URL="https://myrusakov.ru"]Как создать свой сайт[/URL]</textarea>
+		</li>
+	</ol>
+	<div id="comments">
+		<h2 class="h1">Комментарии (<span id="count_comments">5</span>):</h2>
+		<input type="button" value="Добавить комментарий" id="add_comment" onclick="alert('Для добавления комментариев необходимо авторизоваться на сайте!')" />
+						<div class="comment" id="comment_10510">
+		<img src="/images/avatars/default.png" alt="gordon" />		<span class="name"><a href="/forum.html?act=profile&amp;id=6984">gordon</a></span>
+		<span class="date">23.05.2014 16:15:12</span>
+		<p class="text">Симпатично и работает во всех основных браузерах</p>
+		<div class="clear"></div>
+		<p class="functions"><span onclick="alert('Для добавления комментариев необходимо авторизоваться на сайте!')">Ответить</span>
+					</p>
+										<div class="comment" id="comment_10511">
+		<img src="/images/avatars/user_4418.jpeg" alt="alexandrdante" />		<span class="name"><a href="/forum.html?act=profile&amp;id=4418">alexandrdante</a></span>
+		<span class="date">23.05.2014 16:46:30</span>
+		<p class="text">в современных версиях - во всех.
+а так...старые версии ie не поддерживают border-radius</p>
+		<div class="clear"></div>
+		<p class="functions"><span onclick="alert('Для добавления комментариев необходимо авторизоваться на сайте!')">Ответить</span>
+					</p>
+			</div>
+						</div>
+											<div class="comment" id="comment_11077">
+		<img src="/images/avatars/default.png" alt="sergkosm" />		<span class="name"><a href="/forum.html?act=profile&amp;id=2823">sergkosm</a></span>
+		<span class="date">08.10.2014 00:55:56</span>
+		<p class="text">opera квадрат показала, второй раз открыл - норм)</p>
+		<div class="clear"></div>
+		<p class="functions"><span onclick="alert('Для добавления комментариев необходимо авторизоваться на сайте!')">Ответить</span>
+					</p>
+										<div class="comment" id="comment_11081">
+		<img src="/images/avatars/5899fc7fb557d.jpeg" alt="tikkiwiki" />		<span class="name"><a href="/forum.html?act=profile&amp;id=4419">tikkiwiki</a></span>
+		<span class="date">08.10.2014 09:46:23</span>
+		<p class="text">Бывает</p>
+		<div class="clear"></div>
+		<p class="functions"><span onclick="alert('Для добавления комментариев необходимо авторизоваться на сайте!')">Ответить</span>
+					</p>
+			</div>
+						</div>
+											<div class="comment" id="comment_12711">
+		<img src="/images/avatars/default.png" alt="hod1234hod@yahoo.com" />		<span class="name"><a href="/forum.html?act=profile&amp;id=14016">hod1234hod@yahoo.com</a></span>
+		<span class="date">11.08.2017 01:52:35</span>
+		<p class="text">Здравствуйте.
+Возник вопрос насчет адреса картинки.
+Такой код у меня отлично сработал:
+
+background: url(http://test.ru/image.jpeg);
+
+А вот такой нет:
+
+background: url(image.jpeg);
+
+Почему не сработал второй?
+Ведь картинка лежит в корне, а не в папке.</p>
+		<div class="clear"></div>
+		<p class="functions"><span onclick="alert('Для добавления комментариев необходимо авторизоваться на сайте!')">Ответить</span>
+					</p>
+			</div>
+				<div class="clear"></div>
+					<p class="center">Для добавления комментариев надо войти в систему.<br />Если Вы ещё не зарегистрированы на сайте, то сначала <a href="/register.html">зарегистрируйтесь</a>.</p>
+			</div>
+</div></div>
+			<div class="clear"></div>
+		</div>
+		<footer>
+			<div class="sep"></div>
+			<!-- Yandex.Metrika counter -->
+			<div style="display:none;">
+				<script>
+					(function(w, c) {
+						(w[c] = w[c] || []).push(function() {
+						   try {
+							  w.yaCounter3932665 = new Ya.Metrika(3932665);
+							   yaCounter3932665.clickmap(true);
+							   yaCounter3932665.trackLinks(true);     
+						   } catch(e) { }
+					   });
+					})(window, 'yandex_metrika_callbacks');
+				</script>
+			</div>
+			<script src="//mc.yandex.ru/metrika/watch.js" defer="defer"></script>
+			<noscript>
+				<div style="position:absolute">
+					<img src="//mc.yandex.ru/watch/3932665" alt="" />
+				</div>
+			</noscript>
+			<!-- /Yandex.Metrika counter -->
+			<!--LiveInternet counter-->
+			<script>
+			<!--
+				document.write("<a href='https://www.liveinternet.ru/click' "+
+				"target=_blank><img src='//counter.yadro.ru/hit?t21.11;r"+
+				escape(document.referrer)+((typeof(screen)=="undefined")?"":
+				";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+				screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+				";"+Math.random()+
+				"' alt='' title='LiveInternet: показано число просмотров за 24"+
+				" часа, посетителей за 24 часа и за сегодня' "+
+				"border='0' width='88' height='31'><\/a>")
+			//-->
+			</script>
+			<!--/LiveInternet-->
+			<!-- Rating@Mail.ru counter -->
+			<script type="text/javascript">
+			var _tmr = window._tmr || (window._tmr = []);
+			_tmr.push({id: "1883459", type: "pageView", start: (new Date()).getTime()});
+			(function (d, w, id) {
+			  if (d.getElementById(id)) return;
+			  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+			  ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+			  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+			  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+			})(document, window, "topmailru-code");
+			</script><noscript><div>
+			<img src="//top-fwz1.mail.ru/counter?id=1883459;js=na" style="border:0;position:absolute;left:-9999px;" alt="" />
+			</div></noscript>
+			<!-- //Rating@Mail.ru counter -->
+			<!-- Rating@Mail.ru logo -->
+			<a href="https://top.mail.ru/jump?from=1883459">
+			<img src="//top-fwz1.mail.ru/counter?id=1883459;t=479;l=1" 
+			style="border:0;" height="31" width="88" alt="Рейтинг@Mail.ru" /></a>
+			<!-- //Rating@Mail.ru logo -->
+
+			<!-- begin of Top100 code -->
+			<script id="top100Counter" src="https://counter.rambler.ru/top100.jcn?2243752"></script>
+			<noscript>
+				<p>
+					<a href="https://top100.rambler.ru/navi/2243752/">
+						<img src="https://counter.rambler.ru/top100.cnt?2243752" alt="Rambler's Top100" />
+					</a>
+				</p>
+			</noscript>
+			<!-- end of Top100 code -->
+			<p>Copyright &copy; 2010-2018 Русаков Михаил Юрьевич. Все права защищены.</p>
+		</footer>
+	</div>
+			<script src="/js/jquery-1.10.2.min.js"></script>
+			<script src="/js/jquery.wysibb.min.js"></script>
+			<script src="/js/functions.js"></script>
+			<script src="/js/validator.js"></script>
+			<script src="/js/sr.js"></script>
+			<script src="/js/prettify.js"></script>
+	</body>
+</html>

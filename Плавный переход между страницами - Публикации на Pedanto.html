@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+<meta charset='utf-8' />
+<link rel='shortcut icon' href='/favicon.ico' />
+<link rel='alternate' href='https://pedanto.com/news/plavnyj-perehod-mezhdu-stranicami.html' hreflang='ru-ua' /><link rel='alternate' href='https://en.pedanto.com/news/plavnyj-perehod-mezhdu-stranicami.html' hreflang='en-us' /><link rel='alternate' href='https://fr.pedanto.com/news/plavnyj-perehod-mezhdu-stranicami.html' hreflang='fr-fr' /><title>Плавный переход между страницами - Публикации на Pedanto</title>
+<meta name='description' content='
+
+Вы наверное замечали что часто на сайтах&nbsp;при переходе со страницы на страницу мельком можно уловить момент, когда содержимое в виде изображений и те...' />
+
+<meta name='viewport' content='initial-scale=1.0, width=device-width'>
+<meta name='google-site-verification' content='lqvdFGYHWwiufiqRzRjwfwYnWj1kGD-va9ake-wiYmI' /><meta name='yandex-verification' content='c45d14defcaf8400' /><link rel='alternate' type='application/rss+xml' title='RSS поток' href='https://pedanto.com/rss.xml' /><link rel='stylesheet' href='/cache/main.css' /></head>
+<body><div id='wrapper' class='page_transparent'><header id='pg_header'><div class='headLine'><div class='container'><div class='row'><div class='col-md-12'><div class='center-xs center-sm langSelect'><i class='fa fa-language' aria-hidden='true'></i> <a href='//en.pedanto.com/news/plavnyj-perehod-mezhdu-stranicami.html' title='Site on English'>English</a><a href='//fr.pedanto.com/news/plavnyj-perehod-mezhdu-stranicami.html' title='Site en Français'>France</a><a class='active' href='//pedanto.com/news/plavnyj-perehod-mezhdu-stranicami.html' title='Сайт на Русском'>Русский</a></div></div></div></div></div><div class='container'><div class='row siteHead'><div class='nav-bg'><nav class='navbar navbar-default' id='nav'><div class='container-fluid'>
+<div class='navbar-header'>
+<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<a class='navbar-brand' rel='home' href='/index.html' title='Pedanto'>
+<img src='/theme/img/logo.png' alt='Pedanto'>
+</a>
+</div>
+<div class='navbar-collapse collapse'><ul class='nav navbar-nav'><li><a href='/' title='Главная'>Главная </a></li><li><a class='active' href='/news/' title='Блог'>Блог </a></li><li><a href='/gallery/' title='Работы'>Работы </a></li><li><a href='/kalkulyator-stoimosti-sajta.html' title='Калькулятор'>Калькулятор </a></li><li><a href='/contacts.html#footer' title='Обратная связь'>Обратная связь </a></li></ul><ul class='nav navbar-nav navbar-right'><li class='hidden-sm'></li></ul></div></div></nav></div></div></div></header><div id='pg_main'><div class='container'><div class='row'><div id='center' class='col-md-12 column'><div itemscope itemtype='http://schema.org/Article'><meta itemscope itemprop='mainEntityOfPage' itemType='https://schema.org/WebPage' itemid='/news/plavnyj-perehod-mezhdu-stranicami.htm' /><meta itemprop='dateModified' content='2016-04-17 03:20:14' /><div itemprop='publisher' itemscope itemtype='https://schema.org/Organization'>
+<div itemprop='logo' itemscope itemtype='https://schema.org/ImageObject'>
+<img itemprop='url image' src='/theme/img/logo.png' alt='logo' class='nodisplay' />
+</div>
+<meta itemprop='name' content='Pedanto'>
+</div><ul class='breadcrumb'>
+<li><a href='/news/' title='Все публикации'><span itemprop='articleSection'>Публикации</span></a></li>
+<li class='active' itemprop='name'>Плавный переход между страницами</li>
+</ul><div class='n_panel'><div class='n_head'><h1 itemprop='headline'>Плавный переход между страницами</h1></div><div class='n_body'><div class='n_news editable'><div class='nodisplay' itemprop='image' itemscope itemtype='https://schema.org/ImageObject'>
+<img itemprop='url' src='/upload/news/37.jpg' alt='Изображение публикации: Плавный переход между страницами' />
+<meta itemprop='width' content='500'><meta itemprop='height' content='500'>
+</div><div itemprop='articleBody'><p style="text-align: center;"><img alt="" class="ramka" src='/upload/news/37.jpg' style="width: 500px;" /></p>
+<p>Вы наверное замечали что часто на сайтах&nbsp;при переходе со страницы на страницу мельком можно уловить момент, когда содержимое в виде изображений и текстур еще не успело загрузиться. В такие моменты "построения", сайт может выглядеть крайне не презентабельно особенно у людей с низкой пропускной способностью интернета.</p>
+<p>Больше всего&nbsp;это заметно при первой загрузке страницы, когда еще текстуры фона и изображения еще не кэшируются&nbsp;браузером посетителя. Чтобы "сгладить углы" Pedanto рекомендует использовать простой метод, который подойдет для владельца любого сайта. Он позволит&nbsp;реализовать плавный переход между страницами и плавную загрузку новых страниц.</p>
+<h2>Используем CSS</h2>
+<p>Первым делом&nbsp;нам понадобиться скрыть&nbsp;HTML тег&nbsp;body используя CSS стиль <strong>opacity</strong>. Это позволит сделать невидимым весь контент вашего сайта, для последующего плавного его появления при переходе со страницы на страницу. Параметр&nbsp;<strong>transition</strong> задаст скорость изменения стиля, при его смене. В нашем случае страница станет видимой через пол секунды.</p>
+<pre>&lt;body style="opacity:0;transition:.5s;"&gt;</pre>
+<blockquote>
+<p><strong>Важный момент:</strong> Если фон вашего сайта не белого цвета, то данный стиль лучше использовать на блоке внутри основного фона сайта, чтобы при смене страницы всегда оставался базовый цвет основного фона.</p>
+</blockquote>
+<h2>Плавное появление содержимого&nbsp;с помощью&nbsp;Jquery</h2>
+<p>Страницу мы скрыли, но теперь ее нужно каждый раз как-то отображать, а иначе посетитель&nbsp;будет видеть только фон сайта. Для этого нам потребуется написать простой jquery скрипт, который будет отображать содержимое, после того как страница&nbsp;будет полностью загружена. Должна быть подключена <a href="https://jquery.com/download/">jquery библиотека</a>.</p>
+<p>Для этого перед закрывающим тегом <strong>&lt;/body&gt;</strong> следует разместить следующий код:</p>
+<pre>&lt;script&gt;
+  $(document).ready(function() {&nbsp;&nbsp; &nbsp;
+    $("body").css("opacity", "1");
+  });
+&lt;/script&gt;
+</pre>
+<p>Как только страница будет сформирована, наш код изменит <strong>opacity</strong>&nbsp;тега <strong>&lt;body&gt;</strong> сделав его видимым, а&nbsp;<strong>transition</strong> предаст плавности.&nbsp;Вот и все. Таким образом можно легко реализовать плавный переход между страницами сайта, и скрыть дефекты подгрузки страницы.</p>
+<p>Посмотреть пример работы этого скрипта, можно просто перейдя на любую страницу нашего сайта.</p>
+</div><div class='clear'></div></div><div class='n_footer'><div class='row'><div class='col-xs-10'><p class='n_tags'> <a rel='nofollow' title='Просмотр публикаций с тегом: pedanto cms' href='/news/tag-pedanto cms/'><i class='glyphicon glyphicon-tag'></i> pedanto cms</a> <a rel='nofollow' title='Просмотр публикаций с тегом: урок' href='/news/tag-урок/'><i class='glyphicon glyphicon-tag'></i> урок</a> <a rel='nofollow' title='Просмотр публикаций с тегом: страницы' href='/news/tag-страницы/'><i class='glyphicon glyphicon-tag'></i> страницы</a></p><ul class='n_info'><li><i class='glyphicon glyphicon-time'></i> <span itemprop='datePublished'>2015-06-30 19:17:00</span></li><li><i class='glyphicon glyphicon-eye-open'></i> 4361 </li><li itemprop='author' itemscope itemtype='http://schema.org/Person'><a rel='nofollow' href='/users/id_1/' title='Перейти в профиль пользователя'><img src='/upload/avatars/1.jpg' alt='Автор' />
+<span itemprop='name'>Джон Панч</span></a></li></ul></div><div class='col-xs-2'><div class='pull-right n_buttons'><a href='javascript:window.print()' rel='nofollow' title='Распечатать'><i class='glyphicon glyphicon-print'></i></a></div></div></div></div></div></div><div class='rate_line'><div class='row'><div class='col-sm-6'><div class='socialshare center-xs center-sm'><div rel='tooltip' title='Общая оценка: 5<br/>Количество голосов: 2' class='star_rating' id='n_37'><i class='glyphicon active glyphicon-star'></i><i class='glyphicon active glyphicon-star'></i><i class='glyphicon active glyphicon-star'></i><i class='glyphicon active glyphicon-star'></i><i class='glyphicon active glyphicon-star'></i><div style='display:none' itemprop='aggregateRating' itemscope itemtype='http://schema.org/AggregateRating'><span itemprop='worstRating'>1</span><span itemprop='bestRating'>5</span><span itemprop='ratingValue'>5</span><span itemprop='ratingCount'>2</span></div></div><div id='g_plus'><div class='g-plusone' data-annotation='inline' data-width='120'></div></div></div></div><div class='col-sm-6'>
+<div class='socialshare pull-lg-right pull-md-right center-xs center-sm'>
+<div class='a2a_kit a2a_kit_size_32 a2a_default_style' style='display:inline-block;'>
+<a class='a2a_button_google_plus'></a>
+<a class='a2a_button_facebook'></a>
+<a class='a2a_button_twitter'></a>
+<a class='a2a_button_linkedin'></a>
+<a class='a2a_button_vk'></a>
+<a class='a2a_button_google_gmail'></a>
+<a class='a2a_dd' href='https://www.addtoany.com/share'></a>
+</div>
+</div>
+</div></div></div></div><div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+
+var disqus_config = function () { 
+  this.language = "ru";
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//pedanto.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript></div></div></div></div><div id='spacer'></div><div id='dlc'><span style='display:none;'>косавминдох</span></div><footer id='footer'><div id='side-bot-vert'><div class='container '><div class='row'><div class='panelMain col-md-6'><div class='relative'>
+<div class='p_panel'>
+<div class='head'><h2>Последние публикации</h2></div>
+<div class='content'><ul class='p_last_news'><li><a href='/news/alieng-brauzernyj-plagin-prizvannyj-navsegda-sdelat-aliexpress-anglijskim.html' title='ALIENG - Браузерный плагин призванный навсегда сделать Aliexpress английским'>ALIENG - Браузерный плагин призванный навсегда сделать Aliexpress английским</a> <span>23 мая 2017</span></li><li><a href='/news/rumiwifi-plagin-rusifikacii-proshivki-xiaomi-routera.html' title='RUMIWIFI - плагин русификации прошивки Xiaomi роутера'>RUMIWIFI - плагин русификации прошивки Xiaomi роутера</a> <span>10 марта 2017</span></li><li><a href='/news/avilox-rasshirenie-otzyvov-o-prodavcah-na-avito-i-olx.html' title='AVILOX - Расширение отзывов о продавцах на Avito и OLX'>AVILOX - Расширение отзывов о продавцах на Avito и OLX</a> <span>06 марта 2017</span></li><li><a href='/news/obzor-dobavleniya-i-izmeneniya-tovarov-v-pedanto-cms.html' title='Обзор добавления и изменения товаров в Pedanto CMS'>Обзор добавления и изменения товаров в Pedanto CMS</a> <span>02 марта 2017</span></li><li><a href='/news/nastrojka-paneli-upravleniya-ajenti.html' title='Настройка панели управления Ajenti'>Настройка панели управления Ajenti</a> <span>08 сентября 2016</span></li><li><a href='/news/ustanovka-veb-servera-na-raspberry-pi-2.html' title='Установка веб сервера на raspberry pi 2'>Установка веб сервера на raspberry pi 2</a> <span>27 августа 2016</span></li><li><a href='/news/modul-harakteristik-tovarov.html' title='Модуль характеристик товаров'>Модуль характеристик товаров</a> <span>04 мая 2016</span></li></ul><div class='editablez'><p>В новостях вы можете узнать о обновлениях Pedanto<br />
+Вы можете использовать <a href="/rss.xml" title="RSS лента">RSS ленту</a>, для чтения новостей</p>
+<p>Перейти на <a href="/news/" title="Страница новостей">страницу новостей</a></p>
+<p> </p>
+</div>
+</div>
+</div></div></div><div class='panelMain col-md-6'><div class='relative'>
+<div class='p_panel'>
+<div class='head'><h2>Контакты</h2></div>
+<div class='content'><div class='editablez'><p style="text-align: center;"><a href="/contacts.html" title="Перейти на страницу контактов"><img alt="Место расположения веб-студии Pedanto" class="frame" src="/upload/manager/pages/pedanto-on-map-min.png" /></a></p>
+<p> </p>
+<div class="vcard center">
+<div class="tel" style="font-family:Pedanto;font-size:24px;text-transform:uppercase;margin:0 0 20px 0;font-weight:900">
+<p class="value" title="+38 (050) 351 17 24">+38 (050) 351 17 24</p>
+<p class="color"><i class="fa fa-whatsapp" aria-hidden="true"></i> <strong style="font-size:14px;font-weight:300;font-family:Pedanto, Arial;">Мобильный / Viber / WhatsAPP / TELEGRAM</strong></p>
+</div>
+<p class="nodisplay">Студия <span class="fn org">Pedanto</span></p>
+<p class="adr"><span class="country-name">Украина</span>, <span class="locality">г. Чернигов</span>, <span class="street-address">ул. Князя Черного, д. 14</span></p>
+<p> </p>
+</div>
+</div>
+</div>
+</div></div></div></div></div></div><div class='f_text'><div class='container'><div class='row'><div class='col-md-8'><ul class='altMenu minilogin dropup center-xs center-sm center-md'><li><a href='/contacts.html#footer' title='Обратная связь'>Обратная связь</a></li></ul><p class='center-xs center-sm center-md'>PEDANTO.COM © 2010 - 2018</p></div><div class='col-md-4'><p class='pull-lg-right center-md center-sm center-xs'><img src='/theme/img/raspberry.png' alt='Сайт запушен на Raspberry PI' /></p></div></div></div></div></footer></div><script src='/cache/main.js'></script><script src='/scripts/other/alertlist.js' async></script>
+<script src='/scripts/jquery/scrolltop/script.js' async></script>
+<script src='/scripts/jquery/tooltip.js' async></script>
+
+<script src='/scripts/jquery/mask.js'></script>
+
+<script src='https://www.google.com/recaptcha/api.js?hl=ru&amp;onload=CaptchaCallback&amp;render=explicit' async defer></script>
+<script src='/scripts/other/callback/script.js' async defer></script>
+<script>
+$(document).ready(function() {	
+//Не менять строку ниже!
+//SCRIPT INSERT
+ $("head").append("<link rel='stylesheet' href='/scripts/jquery/magnific/magnific-popup.css' /><link rel='stylesheet' href='/scripts/jquery/select/sumoselect.css' /><link rel='stylesheet' href='/scripts/jquery/notify/notify.css' /><link rel='stylesheet' href='/theme/css/animate.css'>");	
+	//SelectBox
+	 $('.SlectBox').SumoSelect({ 
+		 placeholder: 'Выберите',
+		 captionFormat: '{0} выбрано',
+		 locale: ['OK', 'Отмена', 'Выбрать все'],
+		 captionFormatAllSelected: '{0} все выбрано!',
+		 csvDispCount: 3 
+	 });
+	 
+	 $('.SlectBoxAll').SumoSelect({
+			selectAll : true,
+			selectAlltext : 'Выбрать все',
+			placeholder: 'Выберите',
+			captionFormat: '{0} выбрано',
+			locale: ['OK', 'Отмена', 'Выбрать все'],
+			captionFormatAllSelected: '{0} все выбрано!',
+			csvDispCount: 3
+	});
+	
+	$('.SlectBoxSearch').SumoSelect({
+		search: true,
+		placeholder: 'Выберите',
+		searchText: 'Введите значение',
+		captionFormat: '{0} выбрано',
+		locale: ['OK', 'Отмена', 'Выбрать все'],
+		captionFormatAllSelected: '{0} все выбрано!',
+		noMatch: 'Такие параметры не найдены "{0}"'
+	});
+
+});
+
+//Рекаптчи
+var CaptchaCallback = function(){
+	var enebleSubmit = function(response) {
+		$('.captchasubmit').removeProp('disabled');
+	};
+	if ($("div").is("#RecaptchaRemind")) grecaptcha.render('RecaptchaRemind', {
+		'sitekey' : '6LfxnwYTAAAAAJd95hoiuBTPvi62vHUuksI1kc3q',
+		'callback' : enebleSubmit
+	});
+	if ($("div").is("#RecaptchaLogin")) grecaptcha.render('RecaptchaLogin', {
+		'sitekey' : '6LfxnwYTAAAAAJd95hoiuBTPvi62vHUuksI1kc3q',
+		'callback' : enebleSubmit
+	});
+	if ($("div").is("#RecaptchaFeedback")) grecaptcha.render('RecaptchaFeedback', {
+		'sitekey' : '6LfxnwYTAAAAAJd95hoiuBTPvi62vHUuksI1kc3q',
+		'callback' : enebleSubmit
+	});
+	if ($("div").is("#RecaptchaRegister")) grecaptcha.render('RecaptchaRegister', {
+		'sitekey' : '6LfxnwYTAAAAAJd95hoiuBTPvi62vHUuksI1kc3q',
+		'callback' : enebleSubmit
+	});
+};
+</script><div class='editable relative'><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-18621366-2', 'auto');
+  ga('send', 'pageview');
+</script>
+ <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter34047115 = new Ya.Metrika({ id:34047115, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/34047115" style="position:absolute; left:-9999px;" alt="" /></div></noscript> </div><script async src='https://static.addtoany.com/menu/page.js'></script>
+<script src='/scripts/other/star_rating.js'></script>
+<script src='https://apis.google.com/js/platform.js' async defer></script>
+</body></html>

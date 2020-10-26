@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://learn.javascript.ru/mouse-clicks -->
+<html lang="ru" class="working-hover"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>window.currentUser = null;</script><script>window.rateUsdRub = 62.205;</script><title itemprop="name">Мышь: клики, кнопка, координаты</title><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script><link href="./Мышь_ клики, кнопка, координаты_files/css" rel="stylesheet"><link rel="apple-touch-icon-precomposed" href="https://learn.javascript.ru/img/favicon/apple-touch-icon-precomposed.png"><link rel="canonical" href="https://learn.javascript.ru/mouse-clicks"><meta name="msapplication-TileColor" content="#222A2C"><meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"><!-- favicon the rest--><link rel="icon" href="https://learn.javascript.ru/img/favicon/favicon.png"><meta itemprop="image" content="https://learn.javascript.ru/img/site_preview_ru_512x512.png"><meta property="og:title" content="Мышь: клики, кнопка, координаты"><meta property="og:image" content="https://learn.javascript.ru/img/site_preview_ru_1200x630.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="fb:admins" content="100001562528165"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Мышь: клики, кнопка, координаты"><meta name="twitter:site" content="@iliakan"><meta name="twitter:creator" content="@iliakan"><meta name="twitter:image" content="https://learn.javascript.ru/img/site_preview_ru_512x512.png"><link href="./Мышь_ клики, кнопка, координаты_files/styles.1bb9615782e02e5bef90b0984cdaf01b.css" rel="stylesheet"><link rel="prev" href="https://learn.javascript.ru/event-details"><link rel="next" href="https://learn.javascript.ru/unselectable"><script>window.GA_ID = "UA-2056213-16";</script><script>window.YANDEX_METRIKA_ID = 17649010;</script><script>window.GoogleAnalyticsObject="ga",window.ga=function(){window.ga.q.push(arguments)},window.ga.q=[],window.ga.l=Date.now(),ga("create",GA_ID,"auto"),window.currentUser&&ga("set","&uid",currentUser.id),window.addEventListener("error",function(e){var r=(e.filename||e.errorUrl)+": "+(e.lineno||e.errorLine),n=e.stack||e.error&&e.error.stack;ga("send","exception",{exDescription:e.message+" "+r+" "+n,exFatal:!0})});</script><script src="https://www.google-analytics.com/analytics.js" async=""></script><script>ga('send', 'pageview');</script><script>window.metrika={reachGoal:function(){}},window.yandex_metrika_callbacks=[function(){try{window.metrika=new Ya.Metrika({id:YANDEX_METRIKA_ID,webvisor:!0,clickmap:!0,params:{user:window.currentUser&&window.currentUser.id}}),metrika.trackLinks({delay:150}),window.addEventListener("error",function(r){window.metrika.reachGoal("JSERROR",{src:(r.filename||r.errorUrl)+": "+(r.lineno||r.errorLine),stack:r.stack||r.error&&r.error.stack,message:r.message})})}catch(r){}}];</script><script src="https://mc.yandex.ru/metrika/watch.js" async=""></script><script>window.RECAPTCHA_ID = "6Lf9NyETAAAAACZlg-a9Us2SxvYbeVC1ROWaWv4O";</script><script src="./Мышь_ клики, кнопка, координаты_files/init.js.Без названия"></script><script src="./Мышь_ клики, кнопка, координаты_files/head.caf01285586dad2bae81.js.Без названия" defer=""></script><script>
+!function() {
+  var timer = 0;
+
+  function showmesg(t, form) {
+
+     if (timer==0) timer = new Date()
+
+     var tm = new Date()
+     if (tm-timer > 300) {
+  	t = '------------------------------\n'+t
+     }
+
+     var area = document.forms[form+'form'].getElementsByTagName('textarea')[0]
+
+     area.value += t + '\n';
+     area.scrollTop = area.scrollHeight
+
+     timer = tm
+  }
+
+  function logMouse(e) {
+     var evt = e.type
+     while (evt.length < 11) evt += ' '
+     showmesg(evt+" which="+e.which+" button="+e.button, 'test')
+     return false
+  }
+
+  function keyval(n) {
+     if (n == null) return 'undefined';
+     var s = '' + n;
+     if (n >= 32 && n < 127) s += ' ' + String.fromCharCode(n);
+     while (s.length < 6) s += ' ';
+     return s;
+  }
+
+
+  function logClear(form) {
+  	timer = 0
+  	document.forms[form+'form'].getElementsByTagName('textarea')[0].value ='';
+  	lines=0
+  }
+
+  window.logClear = logClear;
+  window.logMouse = logMouse;
+}();
+</script><meta property="og:title" content="Мышь: клики, кнопка, координаты"><meta property="og:type" content="article"><script src="./Мышь_ клики, кнопка, координаты_files/tutorial.caf01285586dad2bae81.js.Без названия" defer="" data-manual="1"></script><script src="./Мышь_ клики, кнопка, координаты_files/footer.caf01285586dad2bae81.js.Без названия" defer=""></script></head><body class=""><panel class="drweb_select-panel" style="display: none;"><div class="drweb_tool-panel"><div class="drweb_tool-icon drweb_tool-icon_show" data-co="restore-btn" title="restore"></div><div class="drweb_tool-icon drweb_tool-icon_remove" data-co="remove-btn" title="remove"></div><div class="drweb_fit-btn" data-co="fit-btn" title=""></div></div><span data-co="label">Выберите элементы, которые не хотите видеть на этой странице</span><div class="drweb_btn" data-co="save">Сохранить</div><div class="drweb_btn" data-co="cancel">Отмена</div><div class="drweb_panel-plug" data-co="plug" style="display: none"></div></panel><script>window.fontTest();</script><span class="font-test" style=""></span><div class="page-wrapper page-wrapper_sidebar_on"><!--[if lt IE 10]><div style="color:red;text-align:center">Извините, IE&lt;10 не поддерживается, пожалуйста используйте более новый браузер.</div><![endif]--><div class="sitetoolbar sitetoolbar_tutorial"><div class="sitetoolbar__content"><div class="sitetoolbar__logo-wrap"><a href="https://learn.javascript.ru/" class="sitetoolbar__link sitetoolbar__link_logo"><object type="image/svg+xml" class="sitetoolbar__logo sitetoolbar__logo_normal" data="./Мышь_ клики, кнопка, координаты_files/sitetoolbar__logo_ru.svg" style="left: 0px; top: 0px; position: absolute;"></object><img src="./Мышь_ клики, кнопка, координаты_files/sitetoolbar__logo_ru.svg" width="171" class="sitetoolbar__logo sitetoolbar__logo_normal" alt="" style="visibility: hidden;"><object type="image/svg+xml" class="sitetoolbar__logo sitetoolbar__logo_small" data="./Мышь_ клики, кнопка, координаты_files/sitetoolbar__logo_small_ru.svg" style="left: 0px; top: 0px; position: absolute;"></object><img src="./Мышь_ клики, кнопка, координаты_files/sitetoolbar__logo_small_ru.svg" width="80" class="sitetoolbar__logo sitetoolbar__logo_small" alt=""><script>Array.prototype.forEach.call(document.querySelectorAll("img.sitetoolbar__logo"),function(e){var t=document.createElement("object");t.type="image/svg+xml",t.className=e.className,t.style.cssText="left:0;top:0;position:absolute",t.onload=function(){t.onload=null,e.style.visibility="hidden"},t.data=e.src,e.parentNode.insertBefore(t,e)});</script></a></div><div class="sitetoolbar__nav-toggle-wrap"><button type="button" class="sitetoolbar__nav-toggle"></button></div><nav class="sitetoolbar__sections"><ul class="sitetoolbar__sections-list"><li class="sitetoolbar__section sitetoolbar__section_current"><a href="https://learn.javascript.ru/tutorial" class="sitetoolbar__link">Учебник</a></li><li class="sitetoolbar__section"><a href="https://learn.javascript.ru/courses" class="sitetoolbar__link">Курсы</a></li><li class="sitetoolbar__section"><a href="https://javascript.ru/forum/" class="sitetoolbar__link">Форум</a></li><li class="sitetoolbar__section"><a href="https://es5.javascript.ru/" class="sitetoolbar__link">ES5</a></li><li class="sitetoolbar__section"><a href="https://learn.javascript.ru/quiz" class="sitetoolbar__link">Тесты знаний</a></li><!--+e('li')(class='section')
+   +e('a').link(href='/jobs/') Стажировки--><li class="sitetoolbar__section sitetoolbar__section_dropdown"><button data-dropdown-toggler="" class="sitetoolbar__dropdown-button">Скринкасты</button><div class="sitetoolbar__dropdown-wrap"><div class="sitetoolbar__dropdown-body"><ul class="sitetoolbar__dropdown-items"><li class="sitetoolbar__dropdown-item"><a href="https://learn.javascript.ru/screencast/nodejs" class="sitetoolbar__dropdown-link sitetoolbar__secondary-link">Node.js</a></li><li class="sitetoolbar__dropdown-item"><a href="https://learn.javascript.ru/screencast/webpack" class="sitetoolbar__dropdown-link sitetoolbar__secondary-link">Webpack</a></li><li class="sitetoolbar__dropdown-item"><a href="https://learn.javascript.ru/screencast/gulp" class="sitetoolbar__dropdown-link sitetoolbar__secondary-link">Gulp 4</a></li><li class="sitetoolbar__dropdown-item"><a href="https://learn.javascript.ru/screencast/react" class="sitetoolbar__dropdown-link sitetoolbar__secondary-link">React.js</a></li><li class="sitetoolbar__dropdown-item"><a href="https://learn.javascript.ru/screencast/angular" class="sitetoolbar__dropdown-link sitetoolbar__secondary-link">Angular</a></li></ul></div></div></li></ul></nav><div class="sitetoolbar__book-wrap"><a href="https://learn.javascript.ru/ebook" class="buy-book-button"><span class="buy-book-button__extra-text">Купить</span>EPUB/PDF</a></div><div class="sitetoolbar__login-wrap"><button data-action-login="" class="sitetoolbar__login"></button></div><div class="sitetoolbar__search-wrap"><div class="sitetoolbar__search-content"><form method="GET" action="https://learn.javascript.ru/search" class="sitetoolbar__search"><button type="button" class="sitetoolbar__search-toggle"></button><div class="sitetoolbar__search-input"><div class="text-input"><input name="query" placeholder="Искать на Javascript.ru" class="text-input__control" type="text"></div><button type="submit" class="sitetoolbar__find">Найти</button></div></form></div></div></div><!-- todo: en variant--><div class="tablet-menu"><div class="tablet-menu__line"><div class="tablet-menu__content"><select onchange="if(this.value) window.location.href=this.value" class="input-select input-select_small tablet-menu__nav"><option value="/tutorial" selected="">Учебник</option><option value="/courses">Курсы</option><option value="https://javascript.ru/forum/">Форум</option><option value="https://es5.javascript.ru">ES5</option><option value="/quiz">Тесты знаний</option></select></div></div><div class="tablet-menu__line"><div class="tablet-menu__content"><form action="https://learn.javascript.ru/search/" class="tablet-menu-search"><input type="search" name="query" placeholder="Поиск в учебнике" required="" class="tablet-menu-search__input"><button type="submit" name="type" value="articles" class="tablet-menu-search__button">Поиск</button></form></div></div><div class="tablet-menu__line"><div class="tablet-menu__content"><a href="https://learn.javascript.ru/tutorial/map" data-action="tutorial-map" class="map"><span class="map__text">Карта учебника</span></a></div></div><!--+e.line--><!--  +e.content--><!--    +b("a").tablet-ebook(href="/ebook")--><!--      +e("span").text Купить учебник--><!--      +e("span").note (EPUB + PDF)--><div class="tablet-menu__line"><div class="tablet-menu__content"><div class="share-icons"><span class="share-icons__title">Поделиться</span><a href="https://twitter.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fmouse-clicks" class="share share_tw"></a><a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Flearn.javascript.ru%2Fmouse-clicks" class="share share_fb"></a><a href="https://plus.google.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fmouse-clicks" class="share share_gp"></a><a href="https://vkontakte.ru/share.php?url=https%3A%2F%2Flearn.javascript.ru%2Fmouse-clicks" class="share share_vk"></a></div></div></div></div><progress data-sticky="" value="28" max="48" data-tooltip="Урок 28 из 48" class="tutorial-progress"></progress></div><div class="page page_sidebar_on page_sidebar-animation-on"><script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");var pageWrapper=document.querySelector(".page-wrapper");pageWrapper&&pageWrapper.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")},0);</script><div class="page__inner"><main class="main main_width-limit"><header class="main__header"><div class="main__header-inner"><ol class="breadcrumbs"><li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" itemref="breadcrumb-1" class="breadcrumbs__item breadcrumbs__item_home"><a href="https://learn.javascript.ru/" itemprop="url" class="breadcrumbs__link"><span itemprop="title" class="breadcrumbs__hidden-text">Учебник</span></a></li><li id="breadcrumb-1" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" itemref="breadcrumb-2" itemprop="child" class="breadcrumbs__item"><a href="https://learn.javascript.ru/ui" itemprop="url" class="breadcrumbs__link"><span itemprop="title">Документ, события, интерфейсы</span></a></li><li id="breadcrumb-2" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" itemprop="child" class="breadcrumbs__item"><a href="https://learn.javascript.ru/event-details" itemprop="url" class="breadcrumbs__link"><span itemprop="title">События в деталях</span></a></li></ol><h1 class="main__header-title">Мышь: клики, кнопка, координаты</h1></div></header><div class="content"><article itemscope="" itemtype="http://schema.org/TechArticle"><meta itemprop="name" content="Мышь: клики, кнопка, координаты"><div itemprop="author" itemscope="" itemtype="http://schema.org/Person"><meta itemprop="email" content="iliakan@gmail.com"><meta itemprop="name" content="Ilya Kantor"></div><div itemprop="articleBody"><p>В этой главе мы глубже разберёмся со списком событий мыши, рассмотрим их общие  свойства, а также те события, которые связаны с кликом.</p>
+<h2><a class="main__anchor" name="типы-событий-мыши" href="https://learn.javascript.ru/mouse-clicks#%D1%82%D0%B8%D0%BF%D1%8B-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9-%D0%BC%D1%8B%D1%88%D0%B8">Типы событий мыши</a></h2><p>Условно можно разделить события на два типа: «простые» и «комплексные».</p>
+<h3><a class="main__anchor" name="простые-события" href="https://learn.javascript.ru/mouse-clicks#%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%8B%D0%B5-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F">Простые события</a></h3><dl>
+<dt><code>mousedown</code></dt>
+<dd>Кнопка мыши нажата над элементом.</dd>
+<dt><code>mouseup</code></dt>
+<dd>Кнопка мыши отпущена над элементом.</dd>
+<dt><code>mouseover</code></dt>
+<dd>Мышь появилась над элементом.</dd>
+<dt><code>mouseout</code></dt>
+<dd>Мышь ушла с элемента.</dd>
+<dt><code>mousemove</code></dt>
+<dd>Каждое движение мыши над элементом генерирует это событие.</dd>
+</dl>
+<h3><a class="main__anchor" name="комплексные-события" href="https://learn.javascript.ru/mouse-clicks#%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81%D0%BD%D1%8B%D0%B5-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F">Комплексные события</a></h3><dl>
+<dt><code>click</code></dt>
+<dd>Вызывается при клике мышью, то есть при <code>mousedown</code>, а затем <code>mouseup</code> на одном элементе</dd>
+<dt><code>contextmenu</code></dt>
+<dd>Вызывается при клике правой кнопкой мыши на элементе.</dd>
+<dt><code>dblclick</code></dt>
+<dd>Вызывается при двойном клике по элементу.</dd>
+</dl>
+<p>Комплексные можно составить из простых, поэтому в теории можно было бы обойтись вообще без них. Но они есть, и это хорошо, потому что с ними удобнее.</p>
+<h3><a class="main__anchor" name="порядок-срабатывания-событий" href="https://learn.javascript.ru/mouse-clicks#%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BE%D0%BA-%D1%81%D1%80%D0%B0%D0%B1%D0%B0%D1%82%D1%8B%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9">Порядок срабатывания событий</a></h3><p>Одно действие может вызывать несколько событий.</p>
+<p>Например, клик вызывает сначала <code>mousedown</code> при нажатии, а затем <code>mouseup</code> и <code>click</code> при отпускании кнопки.</p>
+<p>В тех случаях, когда одно действие генерирует несколько событий, их порядок фиксирован. То есть, обработчики вызовутся в порядке <code>mousedown</code> → <code>mouseup</code> → <code>click</code>.</p>
+<p>Кликните по кнопке ниже и вы увидите, какие при этом происходят события. Попробуйте также двойной клик.</p>
+<p>На тест-стенде ниже все мышиные события записываются, и если между событиями проходит больше 1 секунды, то они для удобства чтения отделяются линией. Также присутствуют свойства <code>which/button</code>, по которым можно определить кнопку мыши. Мы их рассмотрим далее.</p>
+<p><input onmousedown="return logMouse(event)" onmouseup="return logMouse(event)" onclick="return logMouse(event)" oncontextmenu="return logMouse(event)" ondblclick="return logMouse(event)" value="Кликни меня левой или правой кнопкой мыши" type="button"> <input onclick="logClear(&#39;test&#39;)" value="Очистить" type="button"> </p><form id="testform" name="testform"> <textarea style="font-size:12px;height:150px;width:360px;"></textarea></form><p></p>
+<p><strong>Каждое событие обрабатывается независимо.</strong></p>
+<p>Например, при клике события <code>mouseup + click</code> возникают одновременно, но обрабатываются последовательно. Сначала полностью завершается обработка <code>mouseup</code>, затем запускается <code>click</code>.</p>
+<h2><a class="main__anchor" name="получение-информации-о-кнопке-which" href="https://learn.javascript.ru/mouse-clicks#%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%B8-%D0%BE-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B5-which">Получение информации о кнопке: which</a></h2><p>При обработке событий, связанных с кликами мыши, бывает важно знать, какая кнопка нажата.</p>
+<p><strong>Для получения кнопки мыши в объекте <code>event</code> есть свойство <code>which</code>.</strong></p>
+<p>На практике оно используется редко, т.к. обычно обработчик вешается либо  <code>onclick</code> – только на левую кнопку мыши, либо <code>oncontextmenu</code> – только на правую.</p>
+<p>Возможны следующие значения:</p>
+<ul>
+<li><code>event.which == 1</code> – левая кнопка</li>
+<li><code>event.which == 2</code> – средняя кнопка</li>
+<li><code>event.which == 3</code> – правая кнопка</li>
+</ul>
+<p>Это свойство не поддерживается IE8-, но его можно получить способом, описанным в конце главы.</p>
+<h2><a class="main__anchor" name="правый-клик-oncontextmenu" href="https://learn.javascript.ru/mouse-clicks#%D0%BF%D1%80%D0%B0%D0%B2%D1%8B%D0%B9-%D0%BA%D0%BB%D0%B8%D0%BA-oncontextmenu">Правый клик: oncontextmenu</a></h2><p>Это событие срабатывает при клике правой кнопкой мыши:</p>
+<div data-trusted="1" class="code-example" data-demo-height="80" data-autorun="true" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Правый клик на этой кнопке выведет "Клик".<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">oncontextmenu</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>alert(<span class="token punctuation">'</span>Клик!<span class="token punctuation">'</span>);<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Правый клик сюда<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span></span></pre>
+        </div>
+      </div>
+      <div class="code-result code-example__result">
+        <iframe class="code-result__iframe" name="code-result-2n2hcx" style="height:80px" src="./Мышь_ клики, кнопка, координаты_files/saved_resource.html"></iframe>
+      </div>
+      </div><p>При клике на кнопку выше после обработчика <code>oncontextmenu</code> будет показано обычное контекстное меню, которое браузер всегда показывает при клике правой кнопкой. Это является его действием по умолчанию.</p>
+<p>Если мы не хотим, чтобы показывалось встроенное меню, например потому что показываем своё, специфичное для нашего приложения, то можно отменить действие по умолчанию.</p>
+<p>В примере ниже встроенное меню показано не будет:</p>
+<div data-trusted="1" class="code-example" data-demo-height="60" data-autorun="true" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">oncontextmenu</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>alert(<span class="token punctuation">'</span>Клик!<span class="token punctuation">'</span>);return false<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Правый клик сюда<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span></span></pre>
+        </div>
+      </div>
+      <div class="code-result code-example__result">
+        <iframe class="code-result__iframe" name="code-result-9d80xp" style="height:60px" src="./Мышь_ клики, кнопка, координаты_files/saved_resource(1).html"></iframe>
+      </div>
+      </div><h2><a class="main__anchor" name="модификаторы-shift-alt-ctrl-и-meta" href="https://learn.javascript.ru/mouse-clicks#%D0%BC%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%D1%8B-shift-alt-ctrl-%D0%B8-meta">Модификаторы shift, alt, ctrl и meta</a></h2><p>Во всех событиях мыши присутствует информация о нажатых клавишах-модификаторах.</p>
+<p>Соответствующие свойства:</p>
+<ul>
+<li><code>shiftKey</code></li>
+<li><code>altKey</code></li>
+<li><code>ctrlKey</code></li>
+<li><code>metaKey</code> (для Mac)</li>
+</ul>
+<p>Например, кнопка ниже сработает только на Alt+Shift+Клик:</p>
+<div data-trusted="1" class="code-example" data-demo-height="60" data-autorun="true" data-highlight-block="4-4" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class="block-highlight" data-start="4" data-end="4">
+
+
+
+<code class="mask">
+</code></code><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">&gt;</span></span>Alt+Shift+Кликни меня!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>children<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>e<span class="token punctuation">.</span>altKey <span class="token operator">||</span> <span class="token operator">!</span>e<span class="token punctuation">.</span>shiftKey<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span> <span class="token string">'Ура!'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      <div class="code-result code-example__result">
+        <iframe class="code-result__iframe" name="code-result-7m395j" style="height:60px" src="./Мышь_ клики, кнопка, координаты_files/saved_resource(2).html"></iframe>
+      </div>
+      </div><div class="important important_warn">
+            <div class="important__header"><span class="important__type">Внимание: на Mac вместо <code>Ctrl</code> используется <code>Cmd</code></span></div>
+            <div class="important__content"><p>На компьютерах под управлением Windows и Linux есть специальные клавиши <kbd class="shortcut">Alt</kbd>, <kbd class="shortcut">Shift</kbd> и <kbd class="shortcut">Ctrl</kbd>. На Mac есть ещё одна специальная клавиша: <kbd class="shortcut">Cmd</kbd>, которой соответствует свойство <code>metaKey</code>.</p>
+<p>В большинстве случаев там, где под Windows/Linux используется <kbd class="shortcut">Ctrl</kbd>, на Mac используется <kbd class="shortcut">Cmd</kbd>. Там, где пользователь Windows нажимает <kbd class="shortcut">Ctrl<span class="shortcut__plus">+</span>Enter</kbd> или <kbd class="shortcut">Ctrl<span class="shortcut__plus">+</span>A</kbd>, пользователь Mac нажмёт <kbd class="shortcut">Cmd<span class="shortcut__plus">+</span>Enter</kbd> или <kbd class="shortcut">Cmd<span class="shortcut__plus">+</span>A</kbd>, и так далее, почти всегда <kbd class="shortcut">Cmd</kbd> вместо <kbd class="shortcut">Ctrl</kbd>.</p>
+<p>Поэтому, если мы хотим поддерживать сочетание <kbd class="shortcut">Ctrl</kbd>+click или другие подобные, то под Mac имеет смысл использовать <kbd class="shortcut">Cmd</kbd>+click. Пользователям Mac это будет гораздо комфортнее.</p>
+<p>Более того, даже если бы мы хотели бы заставить пользователей Mac использовать именно <kbd class="shortcut">Ctrl</kbd>+click – это было бы затруднительно. Дело в том, что обычный клик с зажатым <kbd class="shortcut">Ctrl</kbd> под Mac работает как <em>правый клик</em> и генерирует событие <code>oncontextmenu</code>, а вовсе не <code>onclick</code>, как под Windows/Linux.</p>
+<p>Решение – чтобы пользователи обоих операционных систем работали с комфортом, в паре с <code>ctrlKey</code> нужно обязательно использовать <code>metaKey</code>.</p>
+<p>В JS-коде это означает, что для удобства пользователей Mac нужно проверять <code>if (event.ctrlKey || event.metaKey)</code>.</p>
+</div></div>
+<h2><a class="main__anchor" name="координаты-в-окне-clientx-y" href="https://learn.javascript.ru/mouse-clicks#%D0%BA%D0%BE%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B0%D1%82%D1%8B-%D0%B2-%D0%BE%D0%BA%D0%BD%D0%B5-clientx-y">Координаты в окне: clientX/Y</a></h2><p>Все мышиные события предоставляют текущие координаты курсора в двух видах: относительно окна и относительно документа.</p>
+<p>Пара свойств <code>clientX/clientY</code> содержит координаты курсора относительно текущего окна.</p>
+<p>При этом, например, если ваше окно размером 500x500, а мышь находится в центре, тогда и <code>clientX</code> и <code>clientY</code> будут равны 250.</p>
+<p>Можно как угодно прокручивать страницу, но если не двигать при этом мышь, то координаты курсора <code>clientX/clientY</code> не изменятся, потому что они считаются относительно окна, а не документа.</p>
+<p>Проведите мышью над полем ввода, чтобы увидеть <code>clientX/clientY</code>:</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">onmousemove</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>this.value = event.clientX+<span class="token punctuation">'</span>:<span class="token punctuation">'</span>+event.clientY<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><input onmousemove="this.value = event.clientX+&#39;:&#39;+event.clientY">
+<p>В той же системе координат работает и метод <code>elem.getBoundingClientRect()</code>, возвращающий координаты элемента, а также <code>position:fixed</code>.</p>
+<h3><a class="main__anchor" name="относительно-документа-pagex-y" href="https://learn.javascript.ru/mouse-clicks#%D0%BE%D1%82%D0%BD%D0%BE%D1%81%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0-pagex-y">Относительно документа: pageX/Y</a></h3><p>Координаты курсора относительно документа находятся в свойствах <code>pageX/pageY</code>.</p>
+<p>Так как эти координаты – относительно левого-верхнего узла документа, а не окна, то они учитывают прокрутку. Если прокрутить страницу, а мышь не трогать, то координаты курсора <code>pageX/pageY</code> изменятся на величину прокрутки, они привязаны к конкретной точке в документе.</p>
+<p>В IE8- этих свойств нет, но можно получить их способом, описанным в конце главы.</p>
+<p>Проведите мышью над полем ввода, чтобы увидеть <code>pageX/pageY</code> (кроме IE8-):</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">onmousemove</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>this.value = event.pageX+<span class="token punctuation">'</span>:<span class="token punctuation">'</span>+event.pageY<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><input onmousemove="this.value = event.pageX+&#39;:&#39;+event.pageY">
+<p>В той же системе координат работает <code>position:absolute</code>, если элемент позиционируется относительно документа.</p>
+<div class="important important_warn">
+            <div class="important__header"><span class="important__type">Устарели: <code>x, y, layerX, layerY</code></span></div>
+            <div class="important__content"><p>Некоторые браузеры поддерживают свойства  <code>event.x/y</code>, <code>event.layerX/layerY</code>.</p>
+<p>Эти свойства устарели, они нестандартные и не добавляют ничего к описанным выше. Использовать их не стоит.</p>
+</div></div>
+<h2><a class="main__anchor" name="особенности-ie8" href="https://learn.javascript.ru/mouse-clicks#%D0%BE%D1%81%D0%BE%D0%B1%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8-ie8">Особенности IE8-</a></h2><h3><a class="main__anchor" name="двойной-клик" href="https://learn.javascript.ru/mouse-clicks#%D0%B4%D0%B2%D0%BE%D0%B9%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BB%D0%B8%D0%BA">Двойной клик</a></h3><p>Все браузеры, кроме IE8-, генерируют <code>dblclick</code> <em>в дополнение</em> к другим событиям.</p>
+<p>То есть, обычно:</p>
+<ul>
+<li><code>mousedown</code> (нажал)</li>
+<li><code>mouseup+click</code> (отжал)</li>
+<li><code>mousedown</code> (нажал)</li>
+<li><code>mouseup+click+dblclick</code> (отжал).</li>
+</ul>
+<p><strong>IE8- на втором клике не генерирует <code>mousedown</code> и <code>click</code>.</strong></p>
+<p>Получается:</p>
+<ul>
+<li><code>mousedown</code> (нажал)</li>
+<li><code>mouseup+click</code> (отжал)</li>
+<li>(нажал второй раз, без события)</li>
+<li><code>mouseup+dblclick</code> (отжал).</li>
+</ul>
+<p>Поэтому отловить двойной клик в IE8-, отслеживая только <code>click</code>, нельзя, ведь при втором нажатии его нет. Нужно именно событие <code>dblclick</code>.</p>
+<h3><a class="main__anchor" name="свойство-which-button" href="https://learn.javascript.ru/mouse-clicks#%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%BE-which-button">Свойство which/button</a></h3><p>В старых IE8- не поддерживалось свойство <code>which</code>, а вместо него использовалось свойство <code>button</code>, которое является 3-х битным числом, в котором каждому биту соответствует кнопка мыши. Бит установлен в 1, только если соответствующая кнопка нажата.</p>
+<p>Чтобы его расшифровать – нужна <a href="https://learn.javascript.ru/bitwise-operators">побитовая операция</a> <code>&amp;</code> («битовое И»):</p>
+<ul>
+<li><code>!!(button &amp; 1) == true</code> (1-й бит установлен), если нажата левая кнопка,</li>
+<li><code>!!(button &amp; 2) == true</code> (2-й бит установлен), если нажата правая кнопка,</li>
+<li><code>!!(button &amp; 4) == true</code> (3-й бит установлен), если нажата средняя кнопка.</li>
+</ul>
+<p>Что интересно, при этом мы можем узнать, были ли две кнопки нажаты одновременно, в то время как стандартный <code>which</code> такой возможности не даёт. Так что, в некотором смысле, свойство <code>button</code> – более мощное.</p>
+<p>Можно легко сделать функцию, которая будет ставить свойство <code>which</code> из <code>button</code>, если его нет:</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><span class="token keyword">function</span> <span class="token function">fixWhich</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>e<span class="token punctuation">.</span>which <span class="token operator">&amp;&amp;</span> e<span class="token punctuation">.</span>button<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// если which нет, но есть button... (IE8-)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>button <span class="token operator">&amp;</span> <span class="token number">1</span><span class="token punctuation">)</span> e<span class="token punctuation">.</span>which <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// левая кнопка</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>button <span class="token operator">&amp;</span> <span class="token number">4</span><span class="token punctuation">)</span> e<span class="token punctuation">.</span>which <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// средняя кнопка</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>button <span class="token operator">&amp;</span> <span class="token number">2</span><span class="token punctuation">)</span> e<span class="token punctuation">.</span>which <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span> <span class="token comment">// правая кнопка</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><h3><a class="main__anchor" name="fixPageXY" href="https://learn.javascript.ru/mouse-clicks#fixPageXY">Свойства pageX/pageY</a></h3><p>В IE до версии 9 не поддерживаются свойства <code>pageX/pageY</code>, но их можно получить, прибавив к <code>clientX/clientY</code> величину прокрутки страницы.</p>
+<p>Более подробно о её вычислении вы можете прочитать в разделе <a href="https://learn.javascript.ru/metrics-window#page-scroll">прокрутка страницы</a>.</p>
+<p>Мы же здесь приведем готовый вариант, который позволяет нам получить <code>pageX/pageY</code> для старых и совсем старых IE:</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><span class="token keyword">function</span> <span class="token function">fixPageXY</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>pageX <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> e<span class="token punctuation">.</span>clientX <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// если нет pageX..</span>
+    <span class="token keyword">var</span> html <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">;</span>
+    <span class="token keyword">var</span> body <span class="token operator">=</span> document<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+
+    e<span class="token punctuation">.</span>pageX <span class="token operator">=</span> e<span class="token punctuation">.</span>clientX <span class="token operator">+</span> <span class="token punctuation">(</span>html<span class="token punctuation">.</span>scrollLeft <span class="token operator">||</span> body <span class="token operator">&amp;&amp;</span> body<span class="token punctuation">.</span>scrollLeft <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    e<span class="token punctuation">.</span>pageX <span class="token operator">-=</span> html<span class="token punctuation">.</span>clientLeft <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    e<span class="token punctuation">.</span>pageY <span class="token operator">=</span> e<span class="token punctuation">.</span>clientY <span class="token operator">+</span> <span class="token punctuation">(</span>html<span class="token punctuation">.</span>scrollTop <span class="token operator">||</span> body <span class="token operator">&amp;&amp;</span> body<span class="token punctuation">.</span>scrollTop <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    e<span class="token punctuation">.</span>pageY <span class="token operator">-=</span> html<span class="token punctuation">.</span>clientTop <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><h2><a class="main__anchor" name="итого" href="https://learn.javascript.ru/mouse-clicks#%D0%B8%D1%82%D0%BE%D0%B3%D0%BE">Итого</a></h2><p>События мыши имеют следующие свойства:</p>
+<ul>
+<li>Кнопка мыши: <code>which</code> (для IE8-: нужно ставить из <code>button</code>)</li>
+<li>Элемент, вызвавший событие: <code>target</code></li>
+<li>Координаты, относительно окна: <code>clientX/clientY</code></li>
+<li>Координаты, относительно документа: <code>pageX/pageY</code> (для IE8-: нужно ставить по <code>clientX/Y</code> и прокрутке)</li>
+<li>Если зажата спец. клавиша, то стоит соответствующее свойство: <code>altKey</code>, <code>ctrlKey</code>, <code>shiftKey</code> или <code>metaKey</code> (Mac).</li>
+<li>Для поддержки <kbd class="shortcut">Ctrl</kbd>+<code>click</code> не забываем проверить <code>if (e.metaKey || e.ctrlKey)</code>, чтобы пользователи <code>Mac</code> тоже были довольны.</li>
+</ul>
+</div></article><div class="tasks"><h2 id="tasks" class="tasks__title"><a href="https://learn.javascript.ru/mouse-clicks#tasks" class="main__anchor main__anchor_noicon tasks__title-anchor">Задачи</a></h2><div class="task tasks__task"><div class="task__header"><div class="task__title-wrap"><h3 class="task__title"><a href="https://learn.javascript.ru/mouse-clicks#%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D1%81-%D0%B2%D1%8B%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC" name="список-с-выделением" class="main__anchor">Список с выделением</a></h3><a href="https://learn.javascript.ru/task/selectable-list" target="_blank" class="task__open-link"></a></div><div class="task__header-note"><span title="Насколько эта задача важна для освоения материала, от 1 до 5" class="task__importance">важность: 5</span></div><div class="task__content"><p>Эта задача состоит из трёх частей.</p>
+<ol>
+<li>Сделайте список, элементы которого можно выделять кликом.</li>
+<li>Добавьте мульти-выделение. Если клик с нажатым <kbd class="shortcut">Ctrl</kbd> (<kbd class="shortcut">Cmd</kbd> под Mac), то элемент добавляется-удаляется из выделенных.</li>
+<li>Добавьте выделение промежутков. Если происходит клик с нажатым <kbd class="shortcut">Shift</kbd>, то к выделению добавляется промежуток элементов от предыдущего кликнутого до этого. При этом не важно, какое именно действие делал предыдущий клик.
+Это похоже на то, как работает файловый менеджер в ряде ОС, но чуть проще, так как конкретная реализация выделений различается у разных ОС, и её точное воспроизведение не входит в эту задачу.</li>
+</ol>
+<p>Демо:</p>
+<div class="code-result">
+    <div class="code-result__toolbar toolbar"></div>
+    <iframe class="code-result__iframe" data-trusted="1" style="height:300px" src="./Мышь_ клики, кнопка, координаты_files/saved_resource(3).html"></iframe>
+  </div><p>P.S. В этой задаче можно считать, что в элементах списка может быть только текст, без вложенных тегов.<br>
+P.P.S. Обработка одновременного нажатия <kbd class="shortcut">Ctrl</kbd>(<kbd class="shortcut">Cmd</kbd>) и <kbd class="shortcut">Shift</kbd> может быть любой.</p>
+<p><a href="http://plnkr.co/edit/WAnHodiQjOyS4dz408g0?p=preview" target="_blank" data-plunk-id="WAnHodiQjOyS4dz408g0">Открыть песочницу для задачи.</a></p><button type="button" class="task__solution">решение</button><div class="task__answer"><div class="task__answer-content"><p><a href="http://plnkr.co/edit/NthETyzybeilD13jen4y?p=preview" target="_blank" data-plunk-id="NthETyzybeilD13jen4y">Открыть решение в песочнице.</a></p></div><button type="button" title="закрыть" class="close-button task__answer-close"></button></div></div></div></div><div class="task tasks__task"><div class="task__header"><div class="task__title-wrap"><h3 class="task__title"><a href="https://learn.javascript.ru/mouse-clicks#%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BE-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0-%D0%BA%D0%BB%D0%B8%D0%BA%D0%B0-%D0%BD%D0%B0-%D0%B7%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BA%D0%B5" name="дерево-проверка-клика-на-заголовке" class="main__anchor">Дерево: проверка клика на заголовке</a></h3><a href="https://learn.javascript.ru/task/tree-coords" target="_blank" class="task__open-link"></a></div><div class="task__header-note"><span title="Насколько эта задача важна для освоения материала, от 1 до 5" class="task__importance">важность: 3</span></div><div class="task__content"><p>Есть кликабельное JavaScript-дерево UL/LI (см. задачу <a href="https://learn.javascript.ru/task/sliding-tree">Раскрывающееся дерево</a>).</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Млекопитающие
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Коровы<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Ослы<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Собаки<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Тигры<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>При клике на заголовке его список его детей скрывается-раскрывается.
+Выглядит это так: (кликайте на заголовки)</p>
+<div class="code-result">
+    <div class="code-result__toolbar toolbar"><div class="toolbar__tool">
+        <a href="https://js.cx/task/tree-coords/source/" target="_blank" title="открыть в новом окне" class="toolbar__button toolbar__button_external"></a>
+      </div>
+      <div class="toolbar__tool">
+        <a href="http://plnkr.co/edit/hrDEAHDZfn2TMq0B4MOT?p=preview" target="_blank" title="открыть в песочнице" data-plunk-id="hrDEAHDZfn2TMq0B4MOT" class="toolbar__button toolbar__button_edit"></a>
+      </div>
+      </div>
+    <iframe class="code-result__iframe" data-trusted="1" style="height:300px" src="./Мышь_ клики, кнопка, координаты_files/saved_resource(4).html"></iframe>
+  </div><p>Однако, проблема в том, что скрытие-раскрытие происходит даже при клике <em>вне заголовка</em>, на пустом пространстве справа от него.</p>
+<p><strong>Как скрывать/раскрывать детей только при клике на заголовок?</strong></p>
+<p>В задаче <a href="https://learn.javascript.ru/task/sliding-tree">Раскрывающееся дерево</a> это решено так: заголовки завёрнуты в элементы <code>SPAN</code> и проверяются клики только на них. Представим на минуту, что мы не хотим оборачивать текст в <code>SPAN</code>, а хотим оставить как есть. Например, по соображениям производительности, если дерево и так очень большое, ведь оборачивание всех заголовков в <code>SPAN</code> увеличит количество DOM-узлов в 2 раза.</p>
+<p><strong>Решите задачу без обёртывания заголовков в <code>SPAN</code>, используя работу с координатами.</strong></p>
+<p>Исходный документ содержит кликабельное дерево.</p>
+<p>P.S. Задача – скорее на сообразительность, однако подход может быть полезен в реальной жизни.</p>
+<p><a href="http://plnkr.co/edit/hrDEAHDZfn2TMq0B4MOT?p=preview" target="_blank" data-plunk-id="hrDEAHDZfn2TMq0B4MOT">Открыть песочницу для задачи.</a></p><button type="button" class="task__solution">решение</button><div class="task__answer"><div class="task__step task__step_open"><button type="button" onclick="showStep(this)" class="task__step-show">Подсказка</button><div class="task__answer-content"><h4 class="task__step-title">Подсказка</h4><p>У события клика есть координаты. Проверьте по ним, попал ли клик на заголовок.</p>
+<p>Самый глубокий узел на координатах можно получить вызовом <a href="https://developer.mozilla.org/en/DOM/document.elementFromPoint">document.elementFromPoint(clientX, clientY)</a>.</p>
+<p>…Но заголовок является текстовым узлом, поэтому эта функция для него работать не будет. Однако это, всё же, можно обойти. Как?</p>
+</div></div><div class="task__step task__step_open"><button type="button" onclick="showStep(this)" class="task__step-show">Подсказка 2</button><div class="task__answer-content"><h4 class="task__step-title">Подсказка 2</h4><p>Можно при клике на <code>LI</code> сделать временный <code>SPAN</code> и переместить в него текстовый узел-заголовок.</p>
+<p>После этого проверить, попал ли клик в него и вернуть всё как было.</p>
+<div data-trusted="1" class="code-example" data-prism-done="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><span class="token comment">// 1) заворачиваем текстовый узел в SPAN</span>
+
+<span class="token comment">// 2) проверяем</span>
+<span class="token keyword">var</span> elem <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">elementFromPoint</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>clientX<span class="token punctuation">,</span> e<span class="token punctuation">.</span>clientY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> isClickOnTitle <span class="token operator">=</span> <span class="token punctuation">(</span>elem <span class="token operator">==</span> span<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 3) возвращаем текстовый узел обратно из SPAN</span></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>На шаге 3 текстовый узел вынимается обратно из <code>SPAN</code>, всё возвращается в исходное состояние.</p>
+</div></div><div class="task__step task__step_open"><button type="button" onclick="showStep(this)" class="task__step-show">Решение</button><div class="task__answer-content"><h4 class="task__step-title">Решение</h4><p><a href="http://plnkr.co/edit/75NhGq2wyp8xT6UtVUNz?p=preview" target="_blank" data-plunk-id="75NhGq2wyp8xT6UtVUNz">Открыть решение в песочнице.</a></p></div></div><button type="button" title="закрыть" class="close-button task__answer-close"></button></div></div></div></div></div><div class="banner-bottom" style="display: flex;"><div class="banner-bottom__text">Проводим <a href="https://learn.javascript.ru/courses">курсы по Javascript и фреймворкам</a>.</div><button data-banner-close="courses" data-banner-close-message="Эта информация больше не будет выводиться." title="не показывать" class="banner-bottom__close"></button></div><script>"hideBannerCourses"in localStorage||(document.querySelector(".banner-bottom").style.display="flex");</script><!--if lang == 'en'--><!--  include /blocks/banner-bottom.en--></div><div class="page__nav-wrap"><a href="https://learn.javascript.ru/event-details" data-tooltip="События в деталях" class="page__nav page__nav_prev"><span class="page__nav-text"><span class="page__nav-text-shortcut">Alt + <span class="page__nav-text-arr">←</span></span></span><span class="page__nav-text-alternate">Предыдущий урок</span></a><a href="https://learn.javascript.ru/unselectable" data-tooltip="Мышь: отмена выделения, невыделяемые элементы" class="page__nav page__nav_next"><span class="page__nav-text"><span class="page__nav-text-shortcut">Alt + <span class="page__nav-text-arr">→</span></span></span><span class="page__nav-text-alternate">Следующий урок</span></a></div><div class="article-tablet-foot tablet-only"><div class="article-tablet-foot__layout"><div class="share-icons"><span class="share-icons__title">Поделиться</span><a href="https://twitter.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fmouse-clicks" class="share share_tw"></a><a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Flearn.javascript.ru%2Fmouse-clicks" class="share share_fb"></a><a href="https://plus.google.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fmouse-clicks" class="share share_gp"></a><a href="https://vkontakte.ru/share.php?url=https%3A%2F%2Flearn.javascript.ru%2Fmouse-clicks" class="share share_vk"></a></div><div class="article-tablet-foot__map"><a href="https://learn.javascript.ru/tutorial/map" data-action="tutorial-map" class="map"><span class="map__text">Карта учебника</span></a></div></div></div><div id="comments" class="comments"><div class="comments__header"><h2 class="comments__header-title"><a href="https://learn.javascript.ru/mouse-clicks#comments" name="comments">Комментарии</a></h2><div class="comments__read-before"><span class="comments__read-before-link">перед тем как писать…</span><div class="comments__read-before-popup"><div class="comments__read-before-popup-i"><ul><li>Приветствуются комментарии, содержащие дополнения и вопросы по статье, и ответы на них.</li><li>Для одной строки кода используйте тег <code>&lt;code&gt;</code>, для нескольких строк кода&nbsp;— тег <code>&lt;pre&gt;</code>, если больше 10 строк&nbsp;— ссылку на песочницу (<a href="http://plnkr.co/edit/?p=preview">plnkr</a>, <a href="http://jsbin.com/">JSBin</a>, <a href="http://codepen.io/">codepen</a>…)</li><li>Если что-то непонятно в статье&nbsp;— пишите, что именно и с какого места.</li></ul></div></div></div></div></div><div id="disqus_thread"></div><script>var disqus_config = function() { if (!this.page) this.page = {}; Object.assign(this.page, {"url":"https:\/\/learn.javascript.ru\/mouse-clicks","identifier":"\/mouse-clicks","title":"\u041c\u044b\u0448\u044c: \u043a\u043b\u0438\u043a\u0438, \u043a\u043d\u043e\u043f\u043a\u0430, \u043a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0442\u044b"}); };</script><script>var disqus_shortname = "learnjavascriptru";</script><script>var disqus_enabled = true;</script></main></div><div class="page__sidebar sidebar sidebar_sticky-footer" style="top: 64px;"><button data-sidebar-toggle="" class="sidebar__toggle"></button><a href="https://learn.javascript.ru/tutorial/map" data-action="tutorial-map" data-tooltip="Карта учебника" class="map"></a><div class="sidebar__inner"><div class="sidebar__content"><div class="sidebar__section"><h4 class="sidebar__section-title">Раздел</h4><nav class="sidebar__navigation"><ul class="sidebar__navigation-links"><li class="sidebar__navigation-link"><a href="https://learn.javascript.ru/event-details" class="sidebar__link">События в деталях</a></li></ul></nav></div><div class="sidebar__section"><h4 class="sidebar__section-title">Навигация по уроку</h4><nav class="sidebar__navigation"><ul class="sidebar__navigation-links"><li class="sidebar__navigation-link"><a href="https://learn.javascript.ru/mouse-clicks#%D1%82%D0%B8%D0%BF%D1%8B-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9-%D0%BC%D1%8B%D1%88%D0%B8" class="sidebar__link">Типы событий мыши</a></li><li class="sidebar__navigation-link"><a href="https://learn.javascript.ru/mouse-clicks#%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%B8-%D0%BE-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B5-which" class="sidebar__link">Получение информации о кнопке: which</a></li><li class="sidebar__navigation-link"><a href="https://learn.javascript.ru/mouse-clicks#%D0%BF%D1%80%D0%B0%D0%B2%D1%8B%D0%B9-%D0%BA%D0%BB%D0%B8%D0%BA-oncontextmenu" class="sidebar__link">Правый клик: oncontextmenu</a></li><li class="sidebar__navigation-link"><a href="https://learn.javascript.ru/mouse-clicks#%D0%BC%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%D1%8B-shift-alt-ctrl-%D0%B8-meta" class="sidebar__link">Модификаторы shift, alt, ctrl и meta</a></li><li class="sidebar__navigation-link"><a href="https://learn.javascript.ru/mouse-clicks#%D0%BA%D0%BE%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B0%D1%82%D1%8B-%D0%B2-%D0%BE%D0%BA%D0%BD%D0%B5-clientx-y" class="sidebar__link">Координаты в окне: clientX/Y</a></li><li class="sidebar__navigation-link"><a href="https://learn.javascript.ru/mouse-clicks#%D0%BE%D1%81%D0%BE%D0%B1%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8-ie8" class="sidebar__link">Особенности IE8-</a></li><li class="sidebar__navigation-link"><a href="https://learn.javascript.ru/mouse-clicks#%D0%B8%D1%82%D0%BE%D0%B3%D0%BE" class="sidebar__link">Итого</a></li></ul></nav></div><div class="sidebar__section"><nav class="sidebar__navigation"><ul class="sidebar__navigation-links"><li class="sidebar__navigation-link"><a href="https://learn.javascript.ru/mouse-clicks#tasks" class="sidebar__link">Задачи (2)</a></li><li class="sidebar__navigation-link"><a href="https://learn.javascript.ru/mouse-clicks#comments" class="sidebar__link">Комментарии</a></li></ul></nav></div><div class="sidebar__section"><div class="sidebar__section-title">Поделиться</div><a href="https://twitter.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fmouse-clicks" class="share share_tw sidebar__share"></a><a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Flearn.javascript.ru%2Fmouse-clicks" class="share share_fb sidebar__share"></a><a href="https://plus.google.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fmouse-clicks" class="share share_gp sidebar__share"></a><a href="https://vkontakte.ru/share.php?url=https%3A%2F%2Flearn.javascript.ru%2Fmouse-clicks" class="share share_vk sidebar__share"></a></div><div class="sidebar__section"><a href="https://github.com/iliakan/javascript-tutorial-ru/tree/master/2-ui/3-event-details/1-mouse-clicks/article.md" class="sidebar__link">Редактировать на Github</a></div></div></div></div></div></div><div class="page-footer"><div class="page-footer__left"><ul class="page-footer__list"><li class="page-footer__item">©&nbsp;2007—2018&nbsp; Илья Кантор</li><li class="page-footer__item"><a href="https://learn.javascript.ru/about#contact-us" class="page-footer__link">связаться с нами</a></li><li class="page-footer__item"><a href="https://learn.javascript.ru/about" class="page-footer__link">о проекте</a></li><li class="page-footer__item"><a href="https://learn.javascript.ru/agreement" class="page-footer__link">соглашение</a></li><li class="page-footer__item"><a href="http://slack.javascript.ru/" class="page-footer__slack">slack-чат</a></li></ul></div><div class="page-footer__right"><ul class="page-footer__list"><li class="page-footer__item">powered by <a rel="nofollow" href="http://nodejs.org/" class="page-footer__link">node.js</a>&nbsp;&amp;&nbsp;<a rel="nofollow" href="http://github.com/iliakan/javascript-tutorial-ru" class="page-footer__link">open source</a></li></ul></div></div><span class="link__type" data-url="#простые-события" style="left: 589px; top: 390px;"></span></body></html>

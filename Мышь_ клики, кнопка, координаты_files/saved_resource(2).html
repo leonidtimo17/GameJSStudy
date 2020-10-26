@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://learn.javascript.ru/mouse-clicks -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+</head><body>
+
+<button>Alt+Shift+Кликни меня!</button>
+
+<script>
+  document.body.children[0].onclick = function(e) {
+    if (!e.altKey || !e.shiftKey) return;
+    alert( 'Ура!' );
+  }
+</script>
+
+
+</body></html>
